@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ldm.prac1.MainActivity;
 import com.ldm.prac1.R;
 
 public class FourthQuestionFragment extends Fragment {
@@ -15,6 +16,8 @@ public class FourthQuestionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ((MainActivity) getActivity()).increaseScore(); // increase score 1
     }
 
     @Override
