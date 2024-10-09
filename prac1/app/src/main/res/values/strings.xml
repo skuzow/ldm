@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">prac1</string>
+    <!-- navigation -->
+    <string name="navigation_start">Start Over</string>
+    <string name="navigation_next">Next Page</string>
     <!-- titles -->
     <string name="title_first_question">First Question</string>
     <string name="title_second_question">Second Question</string>
