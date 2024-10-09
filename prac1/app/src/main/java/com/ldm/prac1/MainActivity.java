@@ -37,19 +37,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBack(View view) {
-        int currentNavDestinationId = Objects.requireNonNull(navController.getCurrentDestination()).getId();
+        int currentNavDestinationId = getCurrentNavDestinationId();
 
-        if (currentNavDestinationId != R.id.navigation_first_question) navController.navigate(R.id.navigation_first_question);
+        if (currentNavDestinationId != R.id.navigation_first_question) {
+            score = 0;
+            navController.navigate(R.id.navigation_first_question);
+        }
     }
 
     public void onNext(View view) {
-        int currentNavDestinationId = Objects.requireNonNull(navController.getCurrentDestination()).getId();
+        int currentNavDestinationId = getCurrentNavDestinationId();
 
         if (currentNavDestinationId == R.id.navigation_first_question) navController.navigate(R.id.navigation_second_question);
         else if (currentNavDestinationId == R.id.navigation_second_question) navController.navigate(R.id.navigation_third_question);
         else if (currentNavDestinationId == R.id.navigation_third_question) navController.navigate(R.id.navigation_fourth_question);
         else if (currentNavDestinationId == R.id.navigation_fourth_question) navController.navigate(R.id.navigation_fifth_question);
         else if (currentNavDestinationId == R.id.navigation_fifth_question) navigateToScoreActivity();
+    }
+
+    private int getCurrentNavDestinationId() {
+        return Objects.requireNonNull(navController.getCurrentDestination()).getId();
     }
 
     private void navigateToScoreActivity() {
