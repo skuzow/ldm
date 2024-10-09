@@ -3,23 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_first_question">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.ldm.prac1.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_first_question"
+        android:name="com.ldm.prac1.ui.questions.FirstQuestionFragment"
+        android:label="@string/title_first_question"
+        tools:layout="@layout/fragment_first_question" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.ldm.prac1.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_second_question"
+        android:name="com.ldm.prac1.ui.questions.SecondQuestionFragment"
+        android:label="@string/title_second_question"
+        tools:layout="@layout/fragment_second_question" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.ldm.prac1.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_third_question"
+        android:name="com.ldm.prac1.ui.questions.ThirdQuestionFragment"
+        android:label="@string/title_third_question"
+        tools:layout="@layout/fragment_third_question" />
+
+    <fragment
+        android:id="@+id/navigation_fourth_question"
+        android:name="com.ldm.prac1.ui.questions.FourthQuestionFragment"
+        android:label="@string/title_fourth_question"
+        tools:layout="@layout/fragment_fourth_question" />
+
+    <fragment
+        android:id="@+id/navigation_fifth_question"
+        android:name="com.ldm.prac1.ui.questions.FifthQuestionFragment"
+        android:label="@string/title_fifth_question"
+        tools:layout="@layout/fragment_fifth_question" />
 </navigation>
