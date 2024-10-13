@@ -34,4 +34,15 @@
         android:name="com.ldm.prac1.ui.questions.FifthQuestionFragment"
         android:label="@string/title_fifth_question"
         tools:layout="@layout/fragment_fifth_question" />
+
+
+ <fragment
+    android:id="@+id/error_message"
+    android:name="com.ldm.prac1.ui.ErrorFragment"
+    android:label="Error"
+    tools:layout="@layout/error_message" />
+
+<action
+    android:id="@+id/action_first_question_to_error_message"
+    app:destination="@id/error_message" />
 </navigation>
