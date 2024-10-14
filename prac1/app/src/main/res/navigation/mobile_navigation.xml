@@ -5,44 +5,50 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_first_question">
 
+    <!-- First Question Fragment -->
     <fragment
         android:id="@+id/navigation_first_question"
         android:name="com.ldm.prac1.ui.questions.FirstQuestionFragment"
         android:label="@string/title_first_question"
-        tools:layout="@layout/fragment_first_question" />
+        tools:layout="@layout/fragment_first_question">
+        <!-- Action to navigate from FirstQuestionFragment to ErrorFragment -->
+        <action
+            android:id="@+id/action_firstQuestionFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
+    </fragment>
 
+    <!-- Second Question Fragment -->
     <fragment
         android:id="@+id/navigation_second_question"
         android:name="com.ldm.prac1.ui.questions.SecondQuestionFragment"
         android:label="@string/title_second_question"
         tools:layout="@layout/fragment_second_question" />
 
+    <!-- Third Question Fragment -->
     <fragment
         android:id="@+id/navigation_third_question"
         android:name="com.ldm.prac1.ui.questions.ThirdQuestionFragment"
         android:label="@string/title_third_question"
         tools:layout="@layout/fragment_third_question" />
 
+    <!-- Fourth Question Fragment -->
     <fragment
         android:id="@+id/navigation_fourth_question"
         android:name="com.ldm.prac1.ui.questions.FourthQuestionFragment"
         android:label="@string/title_fourth_question"
         tools:layout="@layout/fragment_fourth_question" />
 
+    <!-- Fifth Question Fragment -->
     <fragment
         android:id="@+id/navigation_fifth_question"
         android:name="com.ldm.prac1.ui.questions.FifthQuestionFragment"
         android:label="@string/title_fifth_question"
         tools:layout="@layout/fragment_fifth_question" />
 
-
- <fragment
-    android:id="@+id/error_message"
-    android:name="com.ldm.prac1.ui.ErrorFragment"
-    android:label="Error"
-    tools:layout="@layout/error_message" />
-
-<action
-    android:id="@+id/action_first_question_to_error_message"
-    app:destination="@id/error_message" />
+    <!-- Error Fragment -->
+    <fragment
+        android:id="@+id/errorFragment"
+        android:name="com.ldm.prac1.ui.ErrorFragment"
+        android:label="Error"
+        tools:layout="@layout/fragment_error" />
 </navigation>

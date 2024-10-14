@@ -21,7 +21,7 @@ public class ScoreActivity extends AppCompatActivity {
         int score = bundle.getInt("score");
 
         TextView scoreTextView = findViewById(R.id.score);
-        scoreTextView.setText(String.format("%d/5", score));
+        scoreTextView.setText(String.format("%d/15", score));
     }
 
     public void onStartAgain(View view) {

@@ -1,6 +1,5 @@
 package com.ldm.prac1.ui.questions;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,16 +8,15 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 import androidx.fragment.app.Fragment;
-
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.ldm.prac1.MainActivity;
 import com.ldm.prac1.R;
-import com.ldm.prac1.ui.ErrorActivity;
 
 public class FirstQuestionFragment extends Fragment {
 
     private CheckBox checkBox1, checkBox2, checkBox3, checkBox4;
-    private View fragmentView;  // Declare the view as a class variable
+    private View fragmentView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,7 +25,7 @@ public class FirstQuestionFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        fragmentView = inflater.inflate(R.layout.fragment_first_question, container, false);  // Initialize the view
+        fragmentView = inflater.inflate(R.layout.fragment_first_question, container, false);
 
         // Initialize checkboxes
         checkBox1 = fragmentView.findViewById(R.id.q1_anw1);
@@ -48,7 +46,11 @@ public class FirstQuestionFragment extends Fragment {
                     // If any wrong checkbox is checked
                     mainActivity.setCorrect(false);
                     mainActivity.decreaseScore();
-                } else if (checkBox2.isChecked()) { // Only the correct answer
+
+                    // Navigate to ErrorFragment using NavHostFragment
+                    NavHostFragment.findNavController(FirstQuestionFragment.this)
+                            .navigate(R.id.action_firstQuestionFragment_to_errorFragment);
+                } else if (checkBox2.isChecked()) { // Correct answer
                     mainActivity.setCorrect(true);
                     mainActivity.increaseScore();
                 }
@@ -57,9 +59,8 @@ public class FirstQuestionFragment extends Fragment {
 
         // Apply the listener to all checkboxes
         checkBox1.setOnCheckedChangeListener(listener);
-        checkBox2.setOnCheckedChangeListener(listener);  // Correct answer
+        checkBox2.setOnCheckedChangeListener(listener);
         checkBox3.setOnCheckedChangeListener(listener);
         checkBox4.setOnCheckedChangeListener(listener);
     }
-
 }

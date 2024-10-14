@@ -11,7 +11,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.ldm.prac1.databinding.ActivityMainBinding;
-import com.ldm.prac1.ui.ErrorActivity;
 import com.ldm.prac1.ui.ScoreActivity;
 
 import java.util.Objects;
@@ -50,21 +49,15 @@ public class MainActivity extends AppCompatActivity {
     public void onNext(View view) {
         int currentNavDestinationId = getCurrentNavDestinationId();
 
-        if (!isCorrect()) {
-            navigationToErrorMessage();  // Navigate to the error fragment if the answer is incorrect
-            return; // Stop further processing
-        }
-
-        // Continue to the next questions if the answer was correct
-        if (currentNavDestinationId == R.id.navigation_first_question) {
+        if (currentNavDestinationId == R.id.navigation_first_question || currentNavDestinationId == R.id.errorFragment) {
             navController.navigate(R.id.navigation_second_question);
-        } else if (currentNavDestinationId == R.id.navigation_second_question) {
-            navController.navigate(R.id.navigation_third_question);
-        } else if (currentNavDestinationId == R.id.navigation_third_question) {
+        } else if (currentNavDestinationId == R.id.navigation_second_question || currentNavDestinationId == R.id.errorFragment) {
+            navController.navigate(R.id.navigation_third_question );
+        } else if (currentNavDestinationId == R.id.navigation_third_question || currentNavDestinationId == R.id.errorFragment) {
             navController.navigate(R.id.navigation_fourth_question);
-        } else if (currentNavDestinationId == R.id.navigation_fourth_question) {
+        } else if (currentNavDestinationId == R.id.navigation_fourth_question || currentNavDestinationId == R.id.errorFragment) {
             navController.navigate(R.id.navigation_fifth_question);
-        } else if (currentNavDestinationId == R.id.navigation_fifth_question) {
+        } else if (currentNavDestinationId == R.id.navigation_fifth_question || currentNavDestinationId == R.id.errorFragment) {
             navigateToScoreActivity();
         }
     }
@@ -73,11 +66,6 @@ public class MainActivity extends AppCompatActivity {
         return Objects.requireNonNull(navController.getCurrentDestination()).getId();
     }
 
-    private void navigationToErrorMessage() {
-        Intent intent = new Intent(this, ErrorActivity.class);
-        intent.putExtra("error_message", "Incorrect answer!"); // Optional: pass error message
-        startActivity(intent); // Start ErrorActivity instead of navigating to a fragment
-    }
 
     private void navigateToScoreActivity() {
         Intent intent = new Intent(this, ScoreActivity.class);
