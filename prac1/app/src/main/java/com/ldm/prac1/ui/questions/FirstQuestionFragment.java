@@ -8,10 +8,13 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.ldm.prac1.MainActivity;
 import com.ldm.prac1.R;
+import com.ldm.prac1.ui.ErrorDialogFragment;
+
 
 public class FirstQuestionFragment extends Fragment {
 
@@ -44,14 +47,11 @@ public class FirstQuestionFragment extends Fragment {
             if (mainActivity != null) {
                 if (checkBox1.isChecked() || checkBox3.isChecked() || checkBox4.isChecked()) {
                     // If any wrong checkbox is checked
-                    mainActivity.setCorrect(false);
                     mainActivity.decreaseScore();
 
-                    // Navigate to ErrorFragment using NavHostFragment
-                    NavHostFragment.findNavController(FirstQuestionFragment.this)
-                            .navigate(R.id.action_firstQuestionFragment_to_errorFragment);
+                    // Show the error dialog
+                    showErrorDialog();
                 } else if (checkBox2.isChecked()) { // Correct answer
-                    mainActivity.setCorrect(true);
                     mainActivity.increaseScore();
                 }
             }
@@ -63,4 +63,11 @@ public class FirstQuestionFragment extends Fragment {
         checkBox3.setOnCheckedChangeListener(listener);
         checkBox4.setOnCheckedChangeListener(listener);
     }
+
+    private void showErrorDialog() {
+        ErrorDialogFragment errorDialog = new ErrorDialogFragment();
+        errorDialog.show(getChildFragmentManager(), "ErrorDialog"); // Use getChildFragmentManager()
+    }
+
+
 }
