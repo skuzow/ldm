@@ -11,8 +11,6 @@ import androidx.fragment.app.Fragment;
 
 import com.ldm.prac1.MainActivity;
 import com.ldm.prac1.R;
-import com.ldm.prac1.ui.ErrorDialogFragment;
-
 
 public class FirstQuestionFragment extends Fragment {
 
@@ -42,13 +40,14 @@ public class FirstQuestionFragment extends Fragment {
     private void setCheckBoxListeners() {
         CompoundButton.OnCheckedChangeListener listener = (buttonView, isChecked) -> {
             MainActivity mainActivity = (MainActivity) getActivity();
+
             if (mainActivity != null) {
                 if (checkBox1.isChecked() || checkBox3.isChecked() || checkBox4.isChecked()) {
                     // If any wrong checkbox is checked
                     mainActivity.decreaseScore();
 
                     // Show the error dialog
-                    showErrorDialog();
+                    mainActivity.showErrorDialog(getChildFragmentManager());
                 } else if (checkBox2.isChecked()) { // Correct answer
                     mainActivity.increaseScore();
                 }
@@ -61,11 +60,4 @@ public class FirstQuestionFragment extends Fragment {
         checkBox3.setOnCheckedChangeListener(listener);
         checkBox4.setOnCheckedChangeListener(listener);
     }
-
-    private void showErrorDialog() {
-        ErrorDialogFragment errorDialog = new ErrorDialogFragment();
-        errorDialog.show(getChildFragmentManager(), "ErrorDialog"); // Use getChildFragmentManager()
-    }
-
-
 }

@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import com.ldm.prac1.MainActivity;
 import com.ldm.prac1.R;
-import com.ldm.prac1.ui.ErrorDialogFragment;
 
 public class SecondQuestionFragment extends Fragment {
 
@@ -24,7 +23,6 @@ public class SecondQuestionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         fragmentView = inflater.inflate(R.layout.fragment_second_question, container, false);
         radioGroup = fragmentView.findViewById(R.id.radio_group);
 
@@ -32,12 +30,10 @@ public class SecondQuestionFragment extends Fragment {
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             MainActivity mainActivity = (MainActivity) getActivity();
             if (mainActivity != null) {
-                if (checkedId == R.id.radioButton1 ||
-                        checkedId == R.id.radioButton2 ||
-                        checkedId == R.id.radioButton4) {
+                if (checkedId == R.id.radioButton1 || checkedId == R.id.radioButton2 || checkedId == R.id.radioButton4) {
                     // If any wrong answer is selected
                     mainActivity.decreaseScore();
-                    new ErrorDialogFragment().show(getChildFragmentManager(), "ErrorDialog");
+                    mainActivity.showErrorDialog(getChildFragmentManager());
                 } else if (checkedId == R.id.radioButton3) { // Correct answer
                     mainActivity.increaseScore();
                 }

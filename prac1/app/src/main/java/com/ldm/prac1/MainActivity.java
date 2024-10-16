@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.ldm.prac1.databinding.ActivityMainBinding;
+import com.ldm.prac1.ui.ErrorDialogFragment;
 import com.ldm.prac1.ui.ScoreActivity;
 
 import java.util.Objects;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private NavController navController;
 
-    public boolean correct;
+    private boolean correct;
     private int score = 0;
 
     @Override
@@ -66,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         return Objects.requireNonNull(navController.getCurrentDestination()).getId();
     }
 
-
     private void navigateToScoreActivity() {
         Intent intent = new Intent(this, ScoreActivity.class);
 
@@ -75,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtras(bundle);
 
         startActivity(intent);
+    }
+
+    public void showErrorDialog(FragmentManager childFragmentManager) {
+        ErrorDialogFragment errorDialog = new ErrorDialogFragment();
+        errorDialog.show(childFragmentManager, "ErrorDialog");
     }
 
     public void increaseScore() {
@@ -90,8 +96,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setCorrect(boolean active) {
-        this.correct = active; // Update this line
+        correct = active; // Update this line
     }
-
-
 }
