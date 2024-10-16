@@ -49,15 +49,15 @@ public class MainActivity extends AppCompatActivity {
     public void onNext(View view) {
         int currentNavDestinationId = getCurrentNavDestinationId();
 
-        if (currentNavDestinationId == R.id.navigation_first_question || currentNavDestinationId == R.id.errorFragment) {
+        if (currentNavDestinationId == R.id.navigation_first_question) {
             navController.navigate(R.id.navigation_second_question);
-        } else if (currentNavDestinationId == R.id.navigation_second_question || currentNavDestinationId == R.id.errorFragment) {
+        } else if (currentNavDestinationId == R.id.navigation_second_question) {
             navController.navigate(R.id.navigation_third_question );
-        } else if (currentNavDestinationId == R.id.navigation_third_question || currentNavDestinationId == R.id.errorFragment) {
+        } else if (currentNavDestinationId == R.id.navigation_third_question) {
             navController.navigate(R.id.navigation_fourth_question);
-        } else if (currentNavDestinationId == R.id.navigation_fourth_question || currentNavDestinationId == R.id.errorFragment) {
+        } else if (currentNavDestinationId == R.id.navigation_fourth_question) {
             navController.navigate(R.id.navigation_fifth_question);
-        } else if (currentNavDestinationId == R.id.navigation_fifth_question || currentNavDestinationId == R.id.errorFragment) {
+        } else if (currentNavDestinationId == R.id.navigation_fifth_question) {
             navigateToScoreActivity();
         }
     }
