@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/app_background"
     tools:context=".ui.ScoreActivity">
 
     <TextView
@@ -12,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="183dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="280dp"
         android:layout_marginEnd="184dp"
         android:scaleX="4"
         android:scaleY="4"
@@ -41,8 +42,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="138dp"
         android:layout_marginEnd="138dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="170dp"
         android:onClick="onStartAgain"
+        android:scaleX="1.3"
+        android:scaleY="1.3"
         android:text="@string/start_again"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -11,10 +11,6 @@
         android:name="com.ldm.prac1.ui.questions.FirstQuestionFragment"
         android:label="@string/title_first_question"
         tools:layout="@layout/fragment_first_question">
-        <!-- Action to navigate from FirstQuestionFragment to ErrorFragment -->
-        <action
-            android:id="@+id/action_firstQuestionFragment_to_errorFragment"
-            app:destination="@id/errorFragment" />
     </fragment>
 
     <!-- Second Question Fragment -->
@@ -44,11 +40,4 @@
         android:name="com.ldm.prac1.ui.questions.FifthQuestionFragment"
         android:label="@string/title_fifth_question"
         tools:layout="@layout/fragment_fifth_question" />
-
-    <!-- Error Fragment -->
-    <fragment
-        android:id="@+id/errorFragment"
-        android:name="com.ldm.prac1.ui.ErrorFragment"
-        android:label="Error"
-        tools:layout="@layout/fragment_error" />
 </navigation>
