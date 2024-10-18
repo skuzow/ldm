@@ -10,12 +10,15 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="62dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/hello_second_question"
+        android:layout_marginEnd="62dp"
+        android:text="Which movie won the Academy Award for Best Picture in 1994?"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textColor="#191414"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -37,25 +40,35 @@
             android:id="@+id/radioButton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:fontFamily="monospace"
+            android:text="Pulp Fiction"
+            android:textSize="16sp"
+            tools:text="Pulp Fiction" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:fontFamily="monospace"
+            android:text="The Shawshank Redemption"
+            android:textSize="16sp"
+            tools:text="The Shawshank Redemption" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:fontFamily="monospace"
+            android:text="Forrest Gump"
+            android:textSize="16sp"
+            tools:text="Forrest Gump" />
 
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="The Lion King"
+            android:textSize="16sp" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
