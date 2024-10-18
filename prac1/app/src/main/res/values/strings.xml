@@ -19,4 +19,8 @@
     <!-- score -->
     <string name="score">SCORE</string>
     <string name="start_again">Start Again</string>
+    <string name="Cameron">Cameron\n</string>
+    <string name="Spielberg">Spielberg</string>
+    <string name="Lucas">Lucas\n</string>
+    <string name="Scott">Scott</string>
 </resources>
