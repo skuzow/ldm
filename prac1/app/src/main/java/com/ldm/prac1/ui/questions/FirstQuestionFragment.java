@@ -42,13 +42,13 @@ public class FirstQuestionFragment extends Fragment {
             MainActivity mainActivity = (MainActivity) getActivity();
 
             if (mainActivity != null) {
-                if (checkBox1.isChecked() || checkBox3.isChecked() || checkBox4.isChecked()) {
+                if (checkBox2.isChecked() || checkBox3.isChecked() || checkBox4.isChecked()) {
                     // If any wrong checkbox is checked
                     mainActivity.decreaseScore();
 
                     // Show the error dialog
                     mainActivity.showErrorDialog(getChildFragmentManager());
-                } else if (checkBox2.isChecked()) { // Correct answer
+                } else if (checkBox1.isChecked()) { // Correct answer
                     mainActivity.increaseScore();
                 }
             }
