@@ -11,7 +11,6 @@
         android:layout_width="235dp"
         android:layout_height="62dp"
         android:text='@string/first_question_question'
-        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

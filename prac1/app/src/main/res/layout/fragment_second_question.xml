@@ -15,7 +15,6 @@
         android:layout_marginEnd="62dp"
         android:text="@string/second_question_question"
         android:textAlignment="center"
-        android:textColor="#191414"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
