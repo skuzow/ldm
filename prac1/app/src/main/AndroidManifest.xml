@@ -15,7 +15,7 @@
         <activity
             android:name=".ui.ScoreActivity"
             android:exported="false"
-            android:label="@string/title_score"/>
+            android:label="@string/score_title"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

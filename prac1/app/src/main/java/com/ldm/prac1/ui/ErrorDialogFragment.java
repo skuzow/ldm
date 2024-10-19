@@ -21,8 +21,8 @@ public class ErrorDialogFragment extends DialogFragment {
         View view = inflater.inflate(R.layout.fragment_error, container, false);
 
         // Optionally, you can customize the dialog or get the message dynamically
-        TextView errorMessage = view.findViewById(R.id.error_message);
-        errorMessage.setText("Incorrect answer. Please try again.");
+        // TextView errorMessage = view.findViewById(R.id.error_message);
+        // errorMessage.setText("Incorrect answer. Please try again.");
 
         return view;
     }

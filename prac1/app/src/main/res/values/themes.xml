@@ -11,6 +11,10 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!-- Default font. -->
+        <item name="android:fontFamily">monospace</item>
+        <item name="fontFamily">monospace</item>
+        <!-- Default text color. -->
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>
