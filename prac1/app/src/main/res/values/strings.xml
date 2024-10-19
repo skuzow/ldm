@@ -15,6 +15,8 @@
     <string name="score_button">Start Again</string>
     <!-- error dialog -->
     <string name="error_dialog_text">Incorrect answer. Please try again.</string>
+    <!-- block on next dialog -->
+    <string name="block_on_next_dialog_text">Please select the correct answer before going to the next question.</string>
     <!-- correct toast -->
     <string name="correct_toast_text">Correct answer! Go to next question.</string>
     <!-- first question -->

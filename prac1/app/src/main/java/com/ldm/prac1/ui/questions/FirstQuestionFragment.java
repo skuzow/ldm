@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import com.ldm.prac1.MainActivity;
 import com.ldm.prac1.R;
 
+import java.util.Objects;
+
 public class FirstQuestionFragment extends Fragment {
 
     private View fragmentView;
@@ -25,7 +27,9 @@ public class FirstQuestionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView = inflater.inflate(R.layout.fragment_first_question, container, false);
-        mainActivity = (MainActivity) getActivity();
+
+        mainActivity = Objects.requireNonNull((MainActivity) getActivity());
+        mainActivity.resetBlockOnNext();
 
         setCheckBoxesListeners();
 
@@ -41,7 +45,7 @@ public class FirstQuestionFragment extends Fragment {
         CompoundButton.OnCheckedChangeListener listener = (buttonView, isChecked) -> {
             if (secondAnswer.isChecked() || thirdAnswer.isChecked() || fourthAnswer.isChecked()) { // If any wrong checkbox is checked
                 mainActivity.decreaseScore();
-                mainActivity.showErrorDialog(getChildFragmentManager());
+                mainActivity.showErrorDialog();
             } else if (firstAnswer.isChecked()) { // Correct answer
                 mainActivity.increaseScore();
                 mainActivity.showCorrectToast();

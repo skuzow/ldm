@@ -15,6 +15,7 @@ import com.ldm.prac1.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class FourthQuestionFragment extends Fragment {
 
@@ -29,7 +30,9 @@ public class FourthQuestionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView = inflater.inflate(R.layout.fragment_fourth_question, container, false);
-        mainActivity = (MainActivity) getActivity();
+
+        mainActivity = Objects.requireNonNull((MainActivity) getActivity());
+        mainActivity.resetBlockOnNext();
 
         setListViewListener();
 
@@ -56,7 +59,7 @@ public class FourthQuestionFragment extends Fragment {
                 mainActivity.showCorrectToast();
             } else {  // If any wrong answer is selected
                 mainActivity.decreaseScore();
-                mainActivity.showErrorDialog(getChildFragmentManager());
+                mainActivity.showErrorDialog();
             }
         });
     }

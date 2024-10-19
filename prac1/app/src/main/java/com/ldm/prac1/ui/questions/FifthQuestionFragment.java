@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import com.ldm.prac1.MainActivity;
 import com.ldm.prac1.R;
 
+import java.util.Objects;
+
 public class FifthQuestionFragment extends Fragment {
 
     private View fragmentView;
@@ -29,7 +31,9 @@ public class FifthQuestionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView = inflater.inflate(R.layout.fragment_fifth_question, container, false);
-        mainActivity = (MainActivity) getActivity();
+
+        mainActivity = Objects.requireNonNull((MainActivity) getActivity());
+        mainActivity.resetBlockOnNext();
 
         firstAnswer = fragmentView.findViewById(R.id.fifth_question_first_answer);
         secondAnswer = fragmentView.findViewById(R.id.fifth_question_second_answer);
@@ -52,7 +56,7 @@ public class FifthQuestionFragment extends Fragment {
                     mainActivity.showCorrectToast();
                 } else {
                     mainActivity.decreaseScore();
-                    mainActivity.showErrorDialog(getChildFragmentManager());
+                    mainActivity.showErrorDialog();
                 }
                 // Uncheck the other switches to ensure only one can be selected at a time
                 uncheckOtherSwitches(switchButton);

@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import com.ldm.prac1.MainActivity;
 import com.ldm.prac1.R;
 
+import java.util.Objects;
+
 public class SecondQuestionFragment extends Fragment {
 
     private View fragmentView;
@@ -25,7 +27,9 @@ public class SecondQuestionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         fragmentView = inflater.inflate(R.layout.fragment_second_question, container, false);
-        mainActivity = (MainActivity) getActivity();
+
+        mainActivity = Objects.requireNonNull((MainActivity) getActivity());
+        mainActivity.resetBlockOnNext();
 
         setRadioGroupListener();
 
@@ -39,7 +43,7 @@ public class SecondQuestionFragment extends Fragment {
             if (checkedId == R.id.second_question_first_answer || checkedId == R.id.second_question_second_answer
                     || checkedId == R.id.second_question_fourth_answer) { // If any wrong answer is selected
                 mainActivity.decreaseScore();
-                mainActivity.showErrorDialog(getChildFragmentManager());
+                mainActivity.showErrorDialog();
             } else if (checkedId == R.id.second_question_third_answer) { // Correct answer
                 mainActivity.increaseScore();
                 mainActivity.showCorrectToast();
