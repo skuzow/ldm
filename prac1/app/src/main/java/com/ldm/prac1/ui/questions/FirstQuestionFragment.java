@@ -14,8 +14,8 @@ import com.ldm.prac1.R;
 
 public class FirstQuestionFragment extends Fragment {
 
-    private CheckBox checkBox1, checkBox2, checkBox3, checkBox4;
-    private View fragmentView;
+    View fragmentView;
+    MainActivity mainActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,39 +25,32 @@ public class FirstQuestionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView = inflater.inflate(R.layout.fragment_first_question, container, false);
+        mainActivity = (MainActivity) getActivity();
 
-        // Initialize checkboxes
-        checkBox1 = fragmentView.findViewById(R.id.q1_anw1);
-        checkBox2 = fragmentView.findViewById(R.id.q1_anw2);  // This is the correct answer
-        checkBox3 = fragmentView.findViewById(R.id.q1_anw3);
-        checkBox4 = fragmentView.findViewById(R.id.q1_anw4);
-
-        setCheckBoxListeners();
+        setCheckBoxesListeners();
 
         return fragmentView;
     }
 
-    private void setCheckBoxListeners() {
+    private void setCheckBoxesListeners() {
+        CheckBox firstAnswer = fragmentView.findViewById(R.id.first_question_first_answer);
+        CheckBox secondAnswer = fragmentView.findViewById(R.id.first_question_second_answer);  // This is the correct answer
+        CheckBox thirdAnswer = fragmentView.findViewById(R.id.first_question_third_answer);
+        CheckBox fourthAnswer = fragmentView.findViewById(R.id.first_question_fourth_answer);
+
         CompoundButton.OnCheckedChangeListener listener = (buttonView, isChecked) -> {
-            MainActivity mainActivity = (MainActivity) getActivity();
-
-            if (mainActivity != null) {
-                if (checkBox2.isChecked() || checkBox3.isChecked() || checkBox4.isChecked()) {
-                    // If any wrong checkbox is checked
-                    mainActivity.decreaseScore();
-
-                    // Show the error dialog
-                    mainActivity.showErrorDialog(getChildFragmentManager());
-                } else if (checkBox1.isChecked()) { // Correct answer
-                    mainActivity.increaseScore();
-                }
+            if (secondAnswer.isChecked() || thirdAnswer.isChecked() || fourthAnswer.isChecked()) { // If any wrong checkbox is checked
+                mainActivity.decreaseScore();
+                mainActivity.showErrorDialog(getChildFragmentManager());
+            } else if (firstAnswer.isChecked()) { // Correct answer
+                mainActivity.increaseScore();
             }
         };
 
         // Apply the listener to all checkboxes
-        checkBox1.setOnCheckedChangeListener(listener);
-        checkBox2.setOnCheckedChangeListener(listener);
-        checkBox3.setOnCheckedChangeListener(listener);
-        checkBox4.setOnCheckedChangeListener(listener);
+        firstAnswer.setOnCheckedChangeListener(listener);
+        secondAnswer.setOnCheckedChangeListener(listener);
+        thirdAnswer.setOnCheckedChangeListener(listener);
+        fourthAnswer.setOnCheckedChangeListener(listener);
     }
 }

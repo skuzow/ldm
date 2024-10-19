@@ -13,8 +13,8 @@ import com.ldm.prac1.R;
 
 public class ThirdQuestionFragment extends Fragment {
 
-    private ImageButton cameronButton, spielbergButton, lucasButton, scottButton;
     private View fragmentView;
+    MainActivity mainActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,39 +24,32 @@ public class ThirdQuestionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView = inflater.inflate(R.layout.fragment_third_question, container, false);
+        mainActivity = (MainActivity) getActivity();
 
-        // Initialize image buttons
-        cameronButton = fragmentView.findViewById(R.id.imageButton2);
-        spielbergButton = fragmentView.findViewById(R.id.imageButton3);  // This is the correct answer
-        lucasButton = fragmentView.findViewById(R.id.imageButton4);
-        scottButton = fragmentView.findViewById(R.id.imageButton5);
-
-        setButtonListeners();
+        setImageButtonsListeners();
 
         return fragmentView;
     }
 
-    private void setButtonListeners() {
-        View.OnClickListener listener = v -> {
-            MainActivity mainActivity = (MainActivity) getActivity();
+    private void setImageButtonsListeners() {
+        ImageButton firstAnswer = fragmentView.findViewById(R.id.third_question_first_answer);
+        ImageButton secondAnswer = fragmentView.findViewById(R.id.third_question_second_answer);  // This is the correct answer
+        ImageButton thirdAnswer = fragmentView.findViewById(R.id.third_question_third_answer);
+        ImageButton fourthAnswer = fragmentView.findViewById(R.id.third_question_fourth_answer);
 
-            if (mainActivity != null) {
-                if (v == spielbergButton) { // Correct answer
-                    mainActivity.increaseScore();
-                } else {
-                    // If a wrong button is clicked
-                    mainActivity.decreaseScore();
-
-                    // Show the error dialog
-                    mainActivity.showErrorDialog(getChildFragmentManager());
-                }
+        View.OnClickListener listener = view -> {
+            if (view == secondAnswer) { // Correct answer
+                mainActivity.increaseScore();
+            } else { // If a wrong button is clicked
+                mainActivity.decreaseScore();
+                mainActivity.showErrorDialog(getChildFragmentManager());
             }
         };
 
         // Apply the listener to all image buttons
-        cameronButton.setOnClickListener(listener);
-        spielbergButton.setOnClickListener(listener);
-        lucasButton.setOnClickListener(listener);
-        scottButton.setOnClickListener(listener);
+        firstAnswer.setOnClickListener(listener);
+        secondAnswer.setOnClickListener(listener);
+        thirdAnswer.setOnClickListener(listener);
+        fourthAnswer.setOnClickListener(listener);
     }
 }

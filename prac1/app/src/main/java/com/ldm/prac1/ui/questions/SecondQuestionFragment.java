@@ -11,35 +11,36 @@ import com.ldm.prac1.R;
 
 public class SecondQuestionFragment extends Fragment {
 
-    private RadioGroup radioGroup;
-    private View fragmentView;
+    View fragmentView;
+    MainActivity mainActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Increase score when the fragment is created (if applicable)
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         fragmentView = inflater.inflate(R.layout.fragment_second_question, container, false);
-        radioGroup = fragmentView.findViewById(R.id.radio_group);
+        mainActivity = (MainActivity) getActivity();
 
-        // Set up a listener for radio button selection
-        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-            MainActivity mainActivity = (MainActivity) getActivity();
-            if (mainActivity != null) {
-                if (checkedId == R.id.radioButton1 || checkedId == R.id.radioButton2 || checkedId == R.id.radioButton4) {
-                    // If any wrong answer is selected
-                    mainActivity.decreaseScore();
-                    mainActivity.showErrorDialog(getChildFragmentManager());
-                } else if (checkedId == R.id.radioButton3) { // Correct answer
-                    mainActivity.increaseScore();
-                }
-            }
-        });
+        setRadioGroupListener();
 
         return fragmentView;
+    }
+
+    private void setRadioGroupListener() {
+        RadioGroup radioGroup = fragmentView.findViewById(R.id.second_question_answer_group);
+
+        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.second_question_first_answer || checkedId == R.id.second_question_second_answer
+                    || checkedId == R.id.second_question_fourth_answer) { // If any wrong answer is selected
+                mainActivity.decreaseScore();
+                mainActivity.showErrorDialog(getChildFragmentManager());
+            } else if (checkedId == R.id.second_question_third_answer) { // Correct answer
+                mainActivity.increaseScore();
+            }
+        });
     }
 }
