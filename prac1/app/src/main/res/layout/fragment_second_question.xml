@@ -13,7 +13,7 @@
         android:layout_marginStart="62dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="62dp"
-        android:text="Which movie won the Academy Award for Best Picture in 1994?"
+        android:text="@string/second_question_question"
         android:textAlignment="center"
         android:textColor="#191414"
         android:textSize="16sp"
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="Pulp Fiction"
+            android:text="@string/second_question_first_answer"
             android:textSize="16sp"
             tools:text="Pulp Fiction" />
 
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="The Shawshank Redemption"
+            android:text="@string/second_question_second_answer"
             android:textSize="16sp"
             tools:text="The Shawshank Redemption" />
 
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="Forrest Gump"
+            android:text="@string/second_question_third_answer"
             android:textSize="16sp"
             tools:text="Forrest Gump" />
 
@@ -67,7 +67,7 @@
             android:id="@+id/radioButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="The Lion King"
+            android:text="@string/second_question_fourth_answer"
             android:textSize="16sp" />
     </RadioGroup>
 

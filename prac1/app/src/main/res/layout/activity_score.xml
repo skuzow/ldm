@@ -9,7 +9,7 @@
     tools:context=".ui.ScoreActivity">
 
     <TextView
-        android:id="@+id/score_title"
+        android:id="@+id/score_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="183dp"
@@ -17,13 +17,13 @@
         android:layout_marginEnd="184dp"
         android:scaleX="4"
         android:scaleY="4"
-        android:text="@string/score"
+        android:text="@string/score_subtitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/score"
+        android:id="@+id/score_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
@@ -31,13 +31,12 @@
         android:layout_marginEnd="177dp"
         android:scaleX="2"
         android:scaleY="2"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/score_title" />
+        app:layout_constraintTop_toBottomOf="@+id/score_subtitle" />
 
     <Button
-        android:id="@+id/start_again_button"
+        android:id="@+id/score_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="138dp"
@@ -46,7 +45,7 @@
         android:onClick="onStartAgain"
         android:scaleX="1.3"
         android:scaleY="1.3"
-        android:text="@string/start_again"
+        android:text="@string/score_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

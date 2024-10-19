@@ -6,20 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".ui.questions.FirstQuestionFragment">
 
-    <CheckBox
-        android:id="@+id/q1_anw3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="235dp"
+        android:layout_height="62dp"
         android:fontFamily="monospace"
-        android:text="Scar"
+        android:text='@string/first_question_question'
+        android:textColor="@color/black"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/q1_anw2"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="@+id/q1_anw2"
-        app:layout_constraintTop_toBottomOf="@+id/q1_anw2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.297" />
 
     <CheckBox
         android:id="@+id/q1_anw1"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:fontFamily="monospace"
-        android:text="Simba"
+        android:text="@string/first_question_first_answer"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
@@ -37,27 +37,12 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
-        android:id="@+id/q1_anw4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="monospace"
-        android:text="Timon"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/q1_anw3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/q1_anw3"
-        app:layout_constraintTop_toBottomOf="@+id/q1_anw3"
-        app:layout_constraintVertical_bias="0.011" />
-
-    <CheckBox
         android:id="@+id/q1_anw2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="monospace"
-        android:text="Mufasa"
+        android:text="@string/first_question_second_answer"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/q1_anw1"
@@ -66,20 +51,34 @@
         app:layout_constraintTop_toBottomOf="@+id/q1_anw1"
         app:layout_constraintVertical_bias="0.022" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="235dp"
-        android:layout_height="62dp"
+    <CheckBox
+        android:id="@+id/q1_anw3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:fontFamily="monospace"
-        android:text='Who is the main character in the movie "The Lion King"?'
-        android:textColor="#251D1D"
+        android:text="@string/first_question_third_answer"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297"
-        tools:text='Who is the main character in the movie "The Lion King"?' />
+        app:layout_constraintEnd_toEndOf="@+id/q1_anw2"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="@+id/q1_anw2"
+        app:layout_constraintTop_toBottomOf="@+id/q1_anw2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/q1_anw4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="monospace"
+        android:text="@string/first_question_fourth_answer"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/q1_anw3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/q1_anw3"
+        app:layout_constraintTop_toBottomOf="@+id/q1_anw3"
+        app:layout_constraintVertical_bias="0.011" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

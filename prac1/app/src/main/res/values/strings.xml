@@ -4,23 +4,45 @@
     <string name="navigation_start">Start Over</string>
     <string name="navigation_next">Next Page</string>
     <!-- titles -->
-    <string name="title_first_question">First Question</string>
-    <string name="title_second_question">Second Question</string>
-    <string name="title_third_question">Third Question</string>
-    <string name="title_fourth_question">Fourth Question</string>
-    <string name="title_fifth_question">Fifth Question</string>
-    <string name="title_score">Score</string>
-    <!-- questions -->
-    <string name="hello_first_question">Hello first question</string>
-    <string name="hello_second_question">Hello second question</string>
-    <string name="hello_third_question">Hello third question</string>
-    <string name="hello_fourth_question">Hello fourth question</string>
-    <string name="hello_fifth_question">Hello fifth question</string>
+    <string name="first_question_title">First Question</string>
+    <string name="second_question_title">Second Question</string>
+    <string name="third_question_title">Third Question</string>
+    <string name="fourth_question_title">Fourth Question</string>
+    <string name="fifth_question_title">Fifth Question</string>
+    <string name="score_title">Score</string>
     <!-- score -->
-    <string name="score">SCORE</string>
-    <string name="start_again">Start Again</string>
-    <string name="Cameron">Cameron\n</string>
-    <string name="Spielberg">Spielberg</string>
-    <string name="Lucas">Lucas\n</string>
-    <string name="Scott">Scott</string>
+    <string name="score_subtitle">SCORE</string>
+    <string name="score_button">Start Again</string>
+    <!-- error dialog -->
+    <string name="error_dialog_text">Incorrect answer. Please try again.</string>
+    <!-- first question -->
+    <string name="first_question_question">Who is the main character in the movie "The Lion King"?</string>
+    <string name="first_question_first_answer">Simba</string>
+    <string name="first_question_second_answer">Mufasa</string>
+    <string name="first_question_third_answer">Scar</string>
+    <string name="first_question_fourth_answer">Timon</string>
+    <!-- second question -->
+    <string name="second_question_question">Which movie won the Academy Award for Best Picture in 1994?</string>
+    <string name="second_question_first_answer">Pulp Fiction</string>
+    <string name="second_question_second_answer">The Shawshank Redemption</string>
+    <string name="second_question_third_answer">Forrest Gump</string>
+    <string name="second_question_fourth_answer">The Lion King</string>
+    <!-- third question -->
+    <string name="third_question_question">Who directed the 1993 movie Jurassic Park?</string>
+    <string name="third_question_first_answer">Cameron</string>
+    <string name="third_question_second_answer">Spielberg</string>
+    <string name="third_question_third_answer">Lucas</string>
+    <string name="third_question_fourth_answer">Scott</string>
+    <!-- fourth question -->
+    <string name="fourth_question_question">Hello fourth question</string>
+    <string name="fourth_question_first_answer"></string>
+    <string name="fourth_question_second_answer"></string>
+    <string name="fourth_question_third_answer"></string>
+    <string name="fourth_question_fourth_answer"></string>
+    <!-- fifth question -->
+    <string name="fifth_question_question">Hello fifth question</string>
+    <string name="fifth_question_first_answer"></string>
+    <string name="fifth_question_second_answer"></string>
+    <string name="fifth_question_third_answer"></string>
+    <string name="fifth_question_fourth_answer"></string>
 </resources>
