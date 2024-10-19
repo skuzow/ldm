@@ -124,4 +124,5 @@
             android:layout_height="wrap_content"
             android:text="@string/fifth_question_fourth_answer" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

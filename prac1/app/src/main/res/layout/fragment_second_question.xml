@@ -37,29 +37,25 @@
             android:id="@+id/second_question_first_answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/second_question_first_answer"
-            android:textSize="16sp" />
+            android:text="@string/second_question_first_answer" />
 
         <RadioButton
             android:id="@+id/second_question_second_answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/second_question_second_answer"
-            android:textSize="16sp" />
+            android:text="@string/second_question_second_answer" />
 
         <RadioButton
             android:id="@+id/second_question_third_answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/second_question_third_answer"
-            android:textSize="16sp" />
+            android:text="@string/second_question_third_answer" />
 
         <RadioButton
             android:id="@+id/second_question_fourth_answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/second_question_fourth_answer"
-            android:textSize="16sp" />
+            android:text="@string/second_question_fourth_answer" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
