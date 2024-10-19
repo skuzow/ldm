@@ -46,7 +46,6 @@ public class ThirdQuestionFragment extends Fragment {
                 } else {
                     // If a wrong button is clicked
                     mainActivity.decreaseScore();
-
                     // Show the error dialog
                     mainActivity.showErrorDialog(getChildFragmentManager());
                 }
