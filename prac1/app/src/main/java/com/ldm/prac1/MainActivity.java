@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.ldm.prac1.databinding.ActivityMainBinding;
+import com.ldm.prac1.ui.ErrorDialogFragment;
 import com.ldm.prac1.ui.ScoreActivity;
 
 import java.util.Objects;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private NavController navController;
 
+    private boolean correct;
     private int score = 0;
 
     @Override
@@ -48,11 +51,17 @@ public class MainActivity extends AppCompatActivity {
     public void onNext(View view) {
         int currentNavDestinationId = getCurrentNavDestinationId();
 
-        if (currentNavDestinationId == R.id.navigation_first_question) navController.navigate(R.id.navigation_second_question);
-        else if (currentNavDestinationId == R.id.navigation_second_question) navController.navigate(R.id.navigation_third_question);
-        else if (currentNavDestinationId == R.id.navigation_third_question) navController.navigate(R.id.navigation_fourth_question);
-        else if (currentNavDestinationId == R.id.navigation_fourth_question) navController.navigate(R.id.navigation_fifth_question);
-        else if (currentNavDestinationId == R.id.navigation_fifth_question) navigateToScoreActivity();
+        if (currentNavDestinationId == R.id.navigation_first_question) {
+            navController.navigate(R.id.navigation_second_question);
+        } else if (currentNavDestinationId == R.id.navigation_second_question) {
+            navController.navigate(R.id.navigation_third_question );
+        } else if (currentNavDestinationId == R.id.navigation_third_question) {
+            navController.navigate(R.id.navigation_fourth_question);
+        } else if (currentNavDestinationId == R.id.navigation_fourth_question) {
+            navController.navigate(R.id.navigation_fifth_question);
+        } else if (currentNavDestinationId == R.id.navigation_fifth_question) {
+            navigateToScoreActivity();
+        }
     }
 
     private int getCurrentNavDestinationId() {
@@ -69,8 +78,24 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void increaseScore() {
-        score++;
+    public void showErrorDialog(FragmentManager childFragmentManager) {
+        ErrorDialogFragment errorDialog = new ErrorDialogFragment();
+        errorDialog.show(childFragmentManager, "ErrorDialog");
     }
 
+    public void increaseScore() {
+        score+=3;
+    }
+
+    public void decreaseScore() {
+        score-=2;
+    }
+
+    public boolean isCorrect() {
+        return correct;
+    }
+
+    public void setCorrect(boolean active) {
+        correct = active; // Update this line
+    }
 }

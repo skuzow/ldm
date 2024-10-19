@@ -5,33 +5,39 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_first_question">
 
+    <!-- First Question Fragment -->
     <fragment
         android:id="@+id/navigation_first_question"
         android:name="com.ldm.prac1.ui.questions.FirstQuestionFragment"
-        android:label="@string/title_first_question"
-        tools:layout="@layout/fragment_first_question" />
+        android:label="@string/first_question_title"
+        tools:layout="@layout/fragment_first_question">
+    </fragment>
 
+    <!-- Second Question Fragment -->
     <fragment
         android:id="@+id/navigation_second_question"
         android:name="com.ldm.prac1.ui.questions.SecondQuestionFragment"
-        android:label="@string/title_second_question"
+        android:label="@string/second_question_title"
         tools:layout="@layout/fragment_second_question" />
 
+    <!-- Third Question Fragment -->
     <fragment
         android:id="@+id/navigation_third_question"
         android:name="com.ldm.prac1.ui.questions.ThirdQuestionFragment"
-        android:label="@string/title_third_question"
+        android:label="@string/third_question_title"
         tools:layout="@layout/fragment_third_question" />
 
+    <!-- Fourth Question Fragment -->
     <fragment
         android:id="@+id/navigation_fourth_question"
         android:name="com.ldm.prac1.ui.questions.FourthQuestionFragment"
-        android:label="@string/title_fourth_question"
+        android:label="@string/fourth_question_title"
         tools:layout="@layout/fragment_fourth_question" />
 
+    <!-- Fifth Question Fragment -->
     <fragment
         android:id="@+id/navigation_fifth_question"
         android:name="com.ldm.prac1.ui.questions.FifthQuestionFragment"
-        android:label="@string/title_fifth_question"
+        android:label="@string/fifth_question_title"
         tools:layout="@layout/fragment_fifth_question" />
 </navigation>

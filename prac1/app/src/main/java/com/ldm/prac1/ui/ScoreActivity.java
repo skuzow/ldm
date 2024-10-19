@@ -20,8 +20,8 @@ public class ScoreActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         int score = bundle.getInt("score");
 
-        TextView scoreTextView = findViewById(R.id.score);
-        scoreTextView.setText(String.format("%d/5", score));
+        TextView scoreTextView = findViewById(R.id.score_number);
+        scoreTextView.setText(String.format("%d/15", score));
     }
 
     public void onStartAgain(View view) {

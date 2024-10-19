@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/app_background"
     android:paddingTop="?attr/actionBarSize">
 
     <fragment
@@ -22,13 +22,13 @@
         android:id="@+id/navigation_start_button"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginBottom="22dp"
-        android:background="@color/white"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="33dp"
+        android:backgroundTint="@color/red_500"
         android:contentDescription="@string/navigation_start"
         android:onClick="onBack"
-        android:scaleX="2"
-        android:scaleY="2"
+        android:scaleX="3"
+        android:scaleY="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_baseline_keyboard_double_arrow_left_24" />
@@ -38,14 +38,15 @@
         style="@style/Widget.AppCompat.ImageButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="22dp"
-        android:background="@color/white"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="33dp"
+        android:backgroundTint="@color/red_500"
         android:contentDescription="@string/navigation_next"
         android:onClick="onNext"
-        android:scaleX="2"
-        android:scaleY="2"
+        android:scaleX="3"
+        android:scaleY="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_navigate_next_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
