@@ -3,6 +3,7 @@ package com.ldm.prac1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -81,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
     public void showErrorDialog(FragmentManager childFragmentManager) {
         ErrorDialogFragment errorDialog = new ErrorDialogFragment();
         errorDialog.show(childFragmentManager, "ErrorDialog");
+    }
+
+    public void showCorrectToast() {
+        Toast.makeText(this, getString(R.string.correct_toast_text), Toast.LENGTH_LONG).show();
     }
 
     public void increaseScore() {

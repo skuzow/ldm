@@ -53,6 +53,7 @@ public class FourthQuestionFragment extends Fragment {
         questionAnswers.setOnItemClickListener((parent, view, position, id) -> {
             if (position == 2) { // Correct answer
                 mainActivity.increaseScore();
+                mainActivity.showCorrectToast();
             } else {  // If any wrong answer is selected
                 mainActivity.decreaseScore();
                 mainActivity.showErrorDialog(getChildFragmentManager());

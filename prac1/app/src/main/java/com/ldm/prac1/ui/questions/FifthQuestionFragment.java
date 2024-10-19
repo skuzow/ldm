@@ -49,6 +49,7 @@ public class FifthQuestionFragment extends Fragment {
             if (isChecked) {
                 if (isCorrectAnswer) {
                     mainActivity.increaseScore();
+                    mainActivity.showCorrectToast();
                 } else {
                     mainActivity.decreaseScore();
                     mainActivity.showErrorDialog(getChildFragmentManager());

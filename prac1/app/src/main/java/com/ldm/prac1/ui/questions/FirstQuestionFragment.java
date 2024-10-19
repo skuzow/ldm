@@ -44,6 +44,7 @@ public class FirstQuestionFragment extends Fragment {
                 mainActivity.showErrorDialog(getChildFragmentManager());
             } else if (firstAnswer.isChecked()) { // Correct answer
                 mainActivity.increaseScore();
+                mainActivity.showCorrectToast();
             }
         };
 

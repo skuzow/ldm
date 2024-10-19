@@ -42,6 +42,7 @@ public class SecondQuestionFragment extends Fragment {
                 mainActivity.showErrorDialog(getChildFragmentManager());
             } else if (checkedId == R.id.second_question_third_answer) { // Correct answer
                 mainActivity.increaseScore();
+                mainActivity.showCorrectToast();
             }
         });
     }

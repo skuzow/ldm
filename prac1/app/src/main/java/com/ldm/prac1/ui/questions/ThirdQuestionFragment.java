@@ -40,6 +40,7 @@ public class ThirdQuestionFragment extends Fragment {
         View.OnClickListener listener = view -> {
             if (view == secondAnswer) { // Correct answer
                 mainActivity.increaseScore();
+                mainActivity.showCorrectToast();
             } else { // If a wrong button is clicked
                 mainActivity.decreaseScore();
                 mainActivity.showErrorDialog(getChildFragmentManager());
