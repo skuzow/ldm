@@ -34,15 +34,15 @@
     <string name="third_question_third_answer">Lucas</string>
     <string name="third_question_fourth_answer">Scott</string>
     <!-- fourth question -->
-    <string name="fourth_question_question">Hello fourth question</string>
-    <string name="fourth_question_first_answer"></string>
-    <string name="fourth_question_second_answer"></string>
-    <string name="fourth_question_third_answer"></string>
-    <string name="fourth_question_fourth_answer"></string>
+    <string name="fourth_question_question">Which actor played the role of Jack Dawson in the movie Titanic?</string>
+    <string name="fourth_question_first_answer">Brad Pitt</string>
+    <string name="fourth_question_second_answer">Johnny Depp</string>
+    <string name="fourth_question_third_answer">Leonardo Di Caprio</string>
+    <string name="fourth_question_fourth_answer">Matt Damon</string>
     <!-- fifth question -->
-    <string name="fifth_question_question">Hello fifth question</string>
-    <string name="fifth_question_first_answer"></string>
-    <string name="fifth_question_second_answer"></string>
-    <string name="fifth_question_third_answer"></string>
-    <string name="fifth_question_fourth_answer"></string>
+    <string name="fifth_question_question">In which movie does the character &quot;Tony Stark&quot; first appear in the Marvel Cinematic Universe?</string>
+    <string name="fifth_question_first_answer">Thor</string>
+    <string name="fifth_question_second_answer">Captain America:\nThe First Avenger</string>
+    <string name="fifth_question_third_answer">Iron Man</string>
+    <string name="fifth_question_fourth_answer">The Avengers</string>
 </resources>

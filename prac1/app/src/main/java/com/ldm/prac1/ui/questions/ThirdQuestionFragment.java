@@ -14,7 +14,7 @@ import com.ldm.prac1.R;
 public class ThirdQuestionFragment extends Fragment {
 
     private View fragmentView;
-    MainActivity mainActivity;
+    private MainActivity mainActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

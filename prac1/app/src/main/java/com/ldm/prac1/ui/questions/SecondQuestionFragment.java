@@ -1,18 +1,20 @@
 package com.ldm.prac1.ui.questions;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
+
+import androidx.fragment.app.Fragment;
+
 import com.ldm.prac1.MainActivity;
 import com.ldm.prac1.R;
 
 public class SecondQuestionFragment extends Fragment {
 
-    View fragmentView;
-    MainActivity mainActivity;
+    private View fragmentView;
+    private MainActivity mainActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

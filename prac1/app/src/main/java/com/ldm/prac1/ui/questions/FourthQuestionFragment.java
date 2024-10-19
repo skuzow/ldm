@@ -18,49 +18,45 @@ import java.util.List;
 
 public class FourthQuestionFragment extends Fragment {
 
-    ListView lista;
-    List<String> options;
     private View fragmentView;
-
+    private MainActivity mainActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        ((MainActivity) getActivity()).increaseScore(); // increase score 1
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView = inflater.inflate(R.layout.fragment_fourth_question, container, false);
-        // Create listView
-        lista = fragmentView.findViewById(R.id.listView1);
+        mainActivity = (MainActivity) getActivity();
 
-        //Create elements of the list
-        options = new ArrayList<>();
-        options.add("Brad Pitt");
-        options.add("Johnny Depp");
-        options.add("Leonardo Di Caprio"); // correct answer
-        options.add("Matt Damon");
-
-        ArrayAdapter<String> adapterOptions = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, options);
-
-        lista.setAdapter(adapterOptions);
-
-        // Handle list item click events
-        lista.setOnItemClickListener((parent, view, position, id) -> {
-            MainActivity mainActivity = (MainActivity) getActivity();
-            if (mainActivity != null) {
-                if (position == 2) { // Correct answer
-                    mainActivity.increaseScore();
-                } else {
-                    mainActivity.decreaseScore();
-                    mainActivity.showErrorDialog(getChildFragmentManager());
-                }
-            }
-        });
-
+        setListViewListener();
 
         return fragmentView;
+    }
+
+    private void setListViewListener() {
+        ListView questionAnswers = fragmentView.findViewById(R.id.fourth_question_answers);
+
+        List<String> answers = new ArrayList<>();
+        answers.add(getString(R.string.fourth_question_first_answer));
+        answers.add(getString(R.string.fourth_question_second_answer));
+        answers.add(getString(R.string.fourth_question_third_answer)); // correct answer
+        answers.add(getString(R.string.fourth_question_fourth_answer));
+
+        ArrayAdapter<String> adapterAnswers = new ArrayAdapter<String>(mainActivity, android.R.layout.simple_list_item_1, answers);
+
+        questionAnswers.setAdapter(adapterAnswers);
+
+        // Handle list item click events
+        questionAnswers.setOnItemClickListener((parent, view, position, id) -> {
+            if (position == 2) { // Correct answer
+                mainActivity.increaseScore();
+            } else {  // If any wrong answer is selected
+                mainActivity.decreaseScore();
+                mainActivity.showErrorDialog(getChildFragmentManager());
+            }
+        });
     }
 }

@@ -1,19 +1,25 @@
 package com.ldm.prac1.ui.questions;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+
 import androidx.fragment.app.Fragment;
+
 import com.ldm.prac1.MainActivity;
 import com.ldm.prac1.R;
 
 public class FifthQuestionFragment extends Fragment {
 
-    private Switch switchThor, switchCaptainAmerica, switchIronMan, switchAvengers;
     private View fragmentView;
+    private MainActivity mainActivity;
+
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private Switch firstAnswer, secondAnswer, thirdAnswer, fourthAnswer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,27 +29,24 @@ public class FifthQuestionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         fragmentView = inflater.inflate(R.layout.fragment_fifth_question, container, false);
+        mainActivity = (MainActivity) getActivity();
 
-        // Link Switches to layout elements
-        switchThor = fragmentView.findViewById(R.id.switch2);
-        switchCaptainAmerica = fragmentView.findViewById(R.id.switch3);
-        switchIronMan = fragmentView.findViewById(R.id.switch4); // Correct answer
-        switchAvengers = fragmentView.findViewById(R.id.switch5);
+        firstAnswer = fragmentView.findViewById(R.id.fifth_question_first_answer);
+        secondAnswer = fragmentView.findViewById(R.id.fifth_question_second_answer);
+        thirdAnswer = fragmentView.findViewById(R.id.fifth_question_third_answer); // Correct answer
+        fourthAnswer = fragmentView.findViewById(R.id.fifth_question_fourth_answer);
 
-        // Set up listeners for each Switch
-        setSwitchListener(switchThor, false); // Incorrect answer
-        setSwitchListener(switchCaptainAmerica, false); // Incorrect answer
-        setSwitchListener(switchIronMan, true); // Correct answer
-        setSwitchListener(switchAvengers, false); // Incorrect answer
+        setSwitchListener(firstAnswer, false);
+        setSwitchListener(secondAnswer, false);
+        setSwitchListener(thirdAnswer, true);
+        setSwitchListener(fourthAnswer, false);
 
         return fragmentView;
     }
 
-    // Helper method to set up Switch listeners
-    private void setSwitchListener(Switch switchButton, boolean isCorrectAnswer) {
+    private void setSwitchListener(@SuppressLint("UseSwitchCompatOrMaterialCode") Switch switchButton, boolean isCorrectAnswer) {
         switchButton.setOnCheckedChangeListener((CompoundButton buttonView, boolean isChecked) -> {
-            MainActivity mainActivity = (MainActivity) getActivity();
-            if (mainActivity != null && isChecked) {
+            if (isChecked) {
                 if (isCorrectAnswer) {
                     mainActivity.increaseScore();
                 } else {
@@ -56,11 +59,10 @@ public class FifthQuestionFragment extends Fragment {
         });
     }
 
-    // Uncheck all switches except the one passed as a parameter
-    private void uncheckOtherSwitches(Switch selectedSwitch) {
-        if (selectedSwitch != switchThor) switchThor.setChecked(false);
-        if (selectedSwitch != switchCaptainAmerica) switchCaptainAmerica.setChecked(false);
-        if (selectedSwitch != switchIronMan) switchIronMan.setChecked(false);
-        if (selectedSwitch != switchAvengers) switchAvengers.setChecked(false);
+    private void uncheckOtherSwitches(@SuppressLint("UseSwitchCompatOrMaterialCode") Switch selectedSwitch) {
+        if (selectedSwitch != firstAnswer) firstAnswer.setChecked(false);
+        if (selectedSwitch != secondAnswer) secondAnswer.setChecked(false);
+        if (selectedSwitch != thirdAnswer) thirdAnswer.setChecked(false);
+        if (selectedSwitch != fourthAnswer) fourthAnswer.setChecked(false);
     }
 }
