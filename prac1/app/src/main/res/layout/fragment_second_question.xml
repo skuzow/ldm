@@ -18,7 +18,6 @@
         android:textColor="#191414"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -40,7 +39,6 @@
             android:id="@+id/radioButton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="monospace"
             android:text="@string/second_question_first_answer"
             android:textSize="16sp"
             tools:text="Pulp Fiction" />
@@ -49,7 +47,6 @@
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="monospace"
             android:text="@string/second_question_second_answer"
             android:textSize="16sp"
             tools:text="The Shawshank Redemption" />
@@ -58,7 +55,6 @@
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="monospace"
             android:text="@string/second_question_third_answer"
             android:textSize="16sp"
             tools:text="Forrest Gump" />
