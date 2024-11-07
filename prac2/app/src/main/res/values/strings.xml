@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">prac1</string>
+    <!-- navigation -->
+    <string name="navigation_start">Start Over</string>
+    <string name="navigation_next">Next Page</string>
+    <!-- titles -->
+    <string name="first_question_title">First Question</string>
+    <string name="second_question_title">Second Question</string>
+    <string name="third_question_title">Third Question</string>
+    <string name="fourth_question_title">Fourth Question</string>
+    <string name="fifth_question_title">Fifth Question</string>
+    <string name="score_title">Score</string>
+    <!-- score -->
+    <string name="score_subtitle">SCORE</string>
+    <string name="score_button">Start Again</string>
+    <!-- error dialog -->
+    <string name="error_dialog_text">Incorrect answer. Please try again.</string>
+    <!-- block on next dialog -->
+    <string name="block_on_next_dialog_text">Please select the correct answer before going to the next question.</string>
+    <!-- correct toast -->
+    <string name="correct_toast_text">Correct answer! Go to next question.</string>
+    <!-- first question -->
+    <string name="first_question_question">Who is the main character in the movie "The Lion King"?</string>
+    <string name="first_question_first_answer">Simba</string>
+    <string name="first_question_second_answer">Mufasa</string>
+    <string name="first_question_third_answer">Scar</string>
+    <string name="first_question_fourth_answer">Timon</string>
+    <!-- second question -->
+    <string name="second_question_question">Which movie won the Academy Award for Best Picture in 1994?</string>
+    <string name="second_question_first_answer">Pulp Fiction</string>
+    <string name="second_question_second_answer">The Shawshank Redemption</string>
+    <string name="second_question_third_answer">Forrest Gump</string>
+    <string name="second_question_fourth_answer">The Lion King</string>
+    <!-- third question -->
+    <string name="third_question_question">Who directed the 1993 movie Jurassic Park?</string>
+    <string name="third_question_first_answer">Cameron</string>
+    <string name="third_question_second_answer">Spielberg</string>
+    <string name="third_question_third_answer">Lucas</string>
+    <string name="third_question_fourth_answer">Scott</string>
+    <!-- fourth question -->
+    <string name="fourth_question_question">Which actor played the role of Jack Dawson in the movie Titanic?</string>
+    <string name="fourth_question_first_answer">Brad Pitt</string>
+    <string name="fourth_question_second_answer">Johnny Depp</string>
+    <string name="fourth_question_third_answer">Leonardo Di Caprio</string>
+    <string name="fourth_question_fourth_answer">Matt Damon</string>
+    <!-- fifth question -->
+    <string name="fifth_question_question">In which movie does the character &quot;Tony Stark&quot; first appear in the Marvel Cinematic Universe?</string>
+    <string name="fifth_question_first_answer">Thor</string>
+    <string name="fifth_question_second_answer">Captain America:\nThe First Avenger</string>
+    <string name="fifth_question_third_answer">Iron Man</string>
+    <string name="fifth_question_fourth_answer">The Avengers</string>
+</resources>
