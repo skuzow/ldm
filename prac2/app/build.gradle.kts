@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.ldm.prac1"
+    namespace = "com.ldm.cinequiz"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.ldm.prac1"
+        applicationId = "com.ldm.cinequiz"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

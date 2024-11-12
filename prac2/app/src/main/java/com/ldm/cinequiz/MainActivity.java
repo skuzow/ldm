@@ -1,4 +1,4 @@
-package com.ldm.prac1;
+package com.ldm.cinequiz;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,10 +11,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.ldm.prac1.databinding.ActivityMainBinding;
-import com.ldm.prac1.ui.BlockOnNextDialogFragment;
-import com.ldm.prac1.ui.ErrorDialogFragment;
-import com.ldm.prac1.ui.ScoreActivity;
+import com.ldm.cinequiz.databinding.ActivityMainBinding;
+import com.ldm.cinequiz.ui.BlockOnNextDialogFragment;
+import com.ldm.cinequiz.ui.ErrorDialogFragment;
+import com.ldm.cinequiz.ui.ScoreActivity;
 
 import java.util.Objects;
 

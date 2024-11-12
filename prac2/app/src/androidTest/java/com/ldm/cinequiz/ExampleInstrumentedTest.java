@@ -1,4 +1,4 @@
-package com.ldm.prac1;
+package com.ldm.cinequiz;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.ldm.prac1", appContext.getPackageName());
+        assertEquals("com.ldm.cinequiz", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package com.ldm.prac1.ui.questions;
+package com.ldm.cinequiz.ui.questions;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,8 +8,8 @@ import android.widget.ImageButton;
 
 import androidx.fragment.app.Fragment;
 
-import com.ldm.prac1.MainActivity;
-import com.ldm.prac1.R;
+import com.ldm.cinequiz.MainActivity;
+import com.ldm.cinequiz.R;
 
 import java.util.Objects;
 

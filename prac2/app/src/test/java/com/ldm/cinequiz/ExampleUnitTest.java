@@ -1,4 +1,4 @@
-package com.ldm.prac1;
+package com.ldm.cinequiz;
 
 import org.junit.Test;
 

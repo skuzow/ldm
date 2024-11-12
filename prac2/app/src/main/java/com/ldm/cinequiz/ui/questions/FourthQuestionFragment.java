@@ -1,4 +1,4 @@
-package com.ldm.prac1.ui.questions;
+package com.ldm.cinequiz.ui.questions;
 
 import android.os.Bundle;
 
@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.ldm.prac1.MainActivity;
-import com.ldm.prac1.R;
+import com.ldm.cinequiz.MainActivity;
+import com.ldm.cinequiz.R;
 
 import java.util.ArrayList;
 import java.util.List;

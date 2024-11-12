@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">prac1</string>
+    <string name="app_name">CineQuiz</string>
     <!-- navigation -->
     <string name="navigation_start">Start Over</string>
     <string name="navigation_next">Next Page</string>

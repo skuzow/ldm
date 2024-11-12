@@ -1,4 +1,4 @@
-package com.ldm.prac1.ui;
+package com.ldm.cinequiz.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ldm.prac1.MainActivity;
-import com.ldm.prac1.R;
+import com.ldm.cinequiz.MainActivity;
+import com.ldm.cinequiz.R;
 
 public class ScoreActivity extends AppCompatActivity {
 
