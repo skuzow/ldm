@@ -4,12 +4,12 @@
     <string name="navigation_start">Start Over</string>
     <string name="navigation_next">Next Page</string>
     <!-- titles -->
-    <string name="first_question_title">First Question</string>
-    <string name="second_question_title">Second Question</string>
-    <string name="third_question_title">Third Question</string>
-    <string name="fourth_question_title">Fourth Question</string>
-    <string name="fifth_question_title">Fifth Question</string>
-    <string name="score_title">Score</string>
+<!--    <string name="first_question_title">First Question</string>-->
+<!--    <string name="second_question_title">Second Question</string>-->
+<!--    <string name="third_question_title">Third Question</string>-->
+<!--    <string name="fourth_question_title">Fourth Question</string>-->
+<!--    <string name="fifth_question_title">Fifth Question</string>-->
+<!--    <string name="score_title">Score</string>-->
     <!-- score -->
     <string name="score_subtitle">SCORE</string>
     <string name="score_button">Start Again</string>
