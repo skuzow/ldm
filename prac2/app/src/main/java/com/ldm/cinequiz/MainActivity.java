@@ -1,9 +1,11 @@
 package com.ldm.cinequiz;
 
-import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -26,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
     private boolean blockOnNext = true;
     private int score = 0; // max score, if perfect 15
 
+    private SoundPool soundPool;
+    private int errorSoundId;
+    private int correctSoundId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +46,21 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
         hideOnBack();
+
+        // Initialize SoundPool for managing sound effects
+        AudioAttributes attributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(2) // Number of simultaneous sound streams (one for error, one for correct answer)
+                .setAudioAttributes(attributes)
+                .build();
+
+        // Load the sounds
+        errorSoundId = soundPool.load(this, R.raw.error, 1);
+        correctSoundId = soundPool.load(this, R.raw.rightanswer, 1);
     }
 
     public void onBack(View view) {
@@ -96,6 +117,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showErrorDialog() {
+        // Play the error sound when the dialog is shown
+        if (soundPool != null && errorSoundId != 0) {
+            soundPool.play(errorSoundId, 1f, 1f, 0, 0, 1f);
+        }
+
+        // Show the error dialog
         ErrorDialogFragment errorDialog = new ErrorDialogFragment();
         errorDialog.show(this.getSupportFragmentManager(), "ErrorDialog");
     }
@@ -103,6 +130,11 @@ public class MainActivity extends AppCompatActivity {
     public void showCorrectToast() {
         blockOnNext = false;
         Toast.makeText(this, getString(R.string.correct_toast_text), Toast.LENGTH_LONG).show();
+
+        // Play the correct answer sound
+        if (soundPool != null && correctSoundId != 0) {
+            soundPool.play(correctSoundId, 1f, 1f, 0, 0, 1f);
+        }
     }
 
     public void increaseScore() {
@@ -111,5 +143,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void decreaseScore() {
         score-=2;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (soundPool != null) {
+            soundPool.release();
+            soundPool = null;
+        }
     }
 }
