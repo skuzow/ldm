@@ -13,7 +13,6 @@
         android:layout_marginStart="85dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="85dp"
-        android:text="@string/third_question_question"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +40,6 @@
             android:id="@+id/third_question_first_answer"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:contentDescription="@string/third_question_first_answer"
             android:scaleType="centerCrop"
             android:src="@drawable/cameron" />
 
@@ -49,8 +47,7 @@
             android:id="@+id/third_question_first_answer_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/third_question_first_answer" />
+            android:layout_marginStart="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,7 +67,6 @@
             android:id="@+id/third_question_second_answer"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:contentDescription="@string/third_question_second_answer"
             android:scaleType="centerCrop"
             android:src="@drawable/spielberg" />
 
@@ -78,8 +74,7 @@
             android:id="@+id/third_question_second_answer_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/third_question_second_answer" />
+            android:layout_marginStart="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -100,7 +95,6 @@
             android:id="@+id/third_question_third_answer"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:contentDescription="@string/third_question_third_answer"
             android:scaleType="centerCrop"
             android:src="@drawable/george_lucas" />
 
@@ -108,8 +102,7 @@
             android:id="@+id/third_question_third_answer_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/third_question_third_answer" />
+            android:layout_marginStart="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -129,7 +122,6 @@
             android:id="@+id/third_question_fourth_answer"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:contentDescription="@string/third_question_fourth_answer"
             android:scaleType="centerCrop"
             android:src="@drawable/ridley_scott" />
 
@@ -137,8 +129,7 @@
             android:id="@+id/third_question_fourth_answer_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/third_question_fourth_answer" />
+            android:layout_marginStart="10dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

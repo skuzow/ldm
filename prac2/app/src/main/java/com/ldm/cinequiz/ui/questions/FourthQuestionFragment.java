@@ -9,9 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.ldm.cinequiz.MainActivity;
 import com.ldm.cinequiz.R;
+import com.ldm.cinequiz.database.QuestionEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +23,7 @@ public class FourthQuestionFragment extends Fragment {
 
     private View fragmentView;
     private MainActivity mainActivity;
+    private ArrayList<String> answers;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,19 +37,24 @@ public class FourthQuestionFragment extends Fragment {
         mainActivity = Objects.requireNonNull((MainActivity) getActivity());
         mainActivity.resetBlockOnNext();
 
+        setupQuestionText();
+
         setListViewListener();
 
         return fragmentView;
     }
 
+    private void setupQuestionText() {
+        QuestionEntity question = mainActivity.getQuestion(4);
+
+        TextView title = fragmentView.findViewById(R.id.fourth_question_question);
+        title.setText(question.getTitle());
+
+        answers = question.getAnswers();  // correct answer (third)
+    }
+
     private void setListViewListener() {
         ListView questionAnswers = fragmentView.findViewById(R.id.fourth_question_answers);
-
-        List<String> answers = new ArrayList<>();
-        answers.add(getString(R.string.fourth_question_first_answer));
-        answers.add(getString(R.string.fourth_question_second_answer));
-        answers.add(getString(R.string.fourth_question_third_answer)); // correct answer
-        answers.add(getString(R.string.fourth_question_fourth_answer));
 
         ArrayAdapter<String> adapterAnswers = new ArrayAdapter<String>(mainActivity, android.R.layout.simple_list_item_1, answers);
 

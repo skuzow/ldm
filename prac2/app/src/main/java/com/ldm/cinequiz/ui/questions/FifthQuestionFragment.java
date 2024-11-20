@@ -7,12 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.ldm.cinequiz.MainActivity;
 import com.ldm.cinequiz.R;
+import com.ldm.cinequiz.database.QuestionEntity;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class FifthQuestionFragment extends Fragment {
@@ -35,6 +38,8 @@ public class FifthQuestionFragment extends Fragment {
         mainActivity = Objects.requireNonNull((MainActivity) getActivity());
         mainActivity.resetBlockOnNext();
 
+        setupQuestionText();
+
         firstAnswer = fragmentView.findViewById(R.id.fifth_question_first_answer);
         secondAnswer = fragmentView.findViewById(R.id.fifth_question_second_answer);
         thirdAnswer = fragmentView.findViewById(R.id.fifth_question_third_answer); // Correct answer
@@ -46,6 +51,24 @@ public class FifthQuestionFragment extends Fragment {
         setSwitchListener(fourthAnswer, false);
 
         return fragmentView;
+    }
+
+    private void setupQuestionText() {
+        QuestionEntity question = mainActivity.getQuestion(5);
+
+        TextView title = fragmentView.findViewById(R.id.fifth_question_question);
+        title.setText(question.getTitle());
+
+        TextView firstAnswerText = fragmentView.findViewById(R.id.fifth_question_first_answer_text);
+        TextView secondAnswerText = fragmentView.findViewById(R.id.fifth_question_second_answer_text);
+        TextView thirdAnswerText = fragmentView.findViewById(R.id.fifth_question_third_answer_text);
+        TextView fourthAnswerText = fragmentView.findViewById(R.id.fifth_question_fourth_answer_text);
+
+        ArrayList<String> answers = question.getAnswers();
+        firstAnswerText.setText(answers.get(0));
+        secondAnswerText.setText(answers.get(1));
+        thirdAnswerText.setText(answers.get(2));
+        fourthAnswerText.setText(answers.get(3));
     }
 
     private void setSwitchListener(@SuppressLint("UseSwitchCompatOrMaterialCode") Switch switchButton, boolean isCorrectAnswer) {
