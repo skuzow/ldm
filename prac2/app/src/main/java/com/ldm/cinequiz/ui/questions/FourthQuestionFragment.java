@@ -23,6 +23,7 @@ public class FourthQuestionFragment extends Fragment {
 
     private View fragmentView;
     private MainActivity mainActivity;
+
     private ArrayList<String> answers;
 
     @Override

@@ -21,6 +21,7 @@ public class FirstQuestionFragment extends Fragment {
 
     private View fragmentView;
     private MainActivity mainActivity;
+
     private CheckBox firstAnswer, secondAnswer, thirdAnswer, fourthAnswer;
 
     @Override

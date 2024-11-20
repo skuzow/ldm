@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private NavController navController;
+
     private QuestionDao questionDao;
 
     private boolean blockOnNext = true;

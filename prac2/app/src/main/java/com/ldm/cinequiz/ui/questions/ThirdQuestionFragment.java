@@ -21,6 +21,7 @@ public class ThirdQuestionFragment extends Fragment {
 
     private View fragmentView;
     private MainActivity mainActivity;
+
     private ImageButton firstAnswerImage, secondAnswerImage, thirdAnswerImage, fourthAnswerImage;
 
     @Override

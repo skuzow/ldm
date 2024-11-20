@@ -20,5 +20,4 @@ public interface QuestionDao {
 
     @Delete
     void delete(QuestionEntity question);
-
 }
