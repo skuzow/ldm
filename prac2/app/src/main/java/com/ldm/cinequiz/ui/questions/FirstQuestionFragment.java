@@ -6,18 +6,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.ldm.cinequiz.MainActivity;
 import com.ldm.cinequiz.R;
+import com.ldm.cinequiz.database.QuestionEntity;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class FirstQuestionFragment extends Fragment {
 
     private View fragmentView;
     private MainActivity mainActivity;
+
+    private CheckBox firstAnswer, secondAnswer, thirdAnswer, fourthAnswer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,17 +36,32 @@ public class FirstQuestionFragment extends Fragment {
         mainActivity = Objects.requireNonNull((MainActivity) getActivity());
         mainActivity.resetBlockOnNext();
 
+        firstAnswer = fragmentView.findViewById(R.id.first_question_first_answer);
+        secondAnswer = fragmentView.findViewById(R.id.first_question_second_answer);  // This is the correct answer
+        thirdAnswer = fragmentView.findViewById(R.id.first_question_third_answer);
+        fourthAnswer = fragmentView.findViewById(R.id.first_question_fourth_answer);
+
+        setupQuestionText();
+
         setCheckBoxesListeners();
 
         return fragmentView;
     }
 
-    private void setCheckBoxesListeners() {
-        CheckBox firstAnswer = fragmentView.findViewById(R.id.first_question_first_answer);
-        CheckBox secondAnswer = fragmentView.findViewById(R.id.first_question_second_answer);  // This is the correct answer
-        CheckBox thirdAnswer = fragmentView.findViewById(R.id.first_question_third_answer);
-        CheckBox fourthAnswer = fragmentView.findViewById(R.id.first_question_fourth_answer);
+    private void setupQuestionText() {
+        QuestionEntity question = mainActivity.getQuestion(1);
 
+        TextView title = fragmentView.findViewById(R.id.first_question_question);
+        title.setText(question.getTitle());
+
+        ArrayList<String> answers = question.getAnswers();
+        firstAnswer.setText(answers.get(0));
+        secondAnswer.setText(answers.get(1));
+        thirdAnswer.setText(answers.get(2));
+        fourthAnswer.setText(answers.get(3));
+    }
+
+    private void setCheckBoxesListeners() {
         CompoundButton.OnCheckedChangeListener listener = (buttonView, isChecked) -> {
             if (secondAnswer.isChecked() || thirdAnswer.isChecked() || fourthAnswer.isChecked()) { // If any wrong checkbox is checked
                 mainActivity.decreaseScore();
