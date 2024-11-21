@@ -1,13 +1,18 @@
 package com.ldm.cinequiz;
 
+import android.content.res.Configuration;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 import android.content.Intent;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,6 +21,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.ldm.cinequiz.databinding.ActivityMainBinding;
 import com.ldm.cinequiz.ui.BlockOnNextDialogFragment;
 import com.ldm.cinequiz.ui.ErrorDialogFragment;
+import com.ldm.cinequiz.ui.ManualActivity;
 import com.ldm.cinequiz.ui.ScoreActivity;
 
 import java.util.Objects;
@@ -62,6 +68,55 @@ public class MainActivity extends AppCompatActivity {
         errorSoundId = soundPool.load(this, R.raw.error, 1);
         correctSoundId = soundPool.load(this, R.raw.rightanswer, 1);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_settings) {
+            showSettingsDialog();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showSettingsDialog() {
+        String[] options = {"Dark Mode", "Manual"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.settings)
+                .setItems(options, (dialog, which) -> {
+                    switch (which) {
+                        case 0: // Dark Mode
+                            toggleDarkMode();
+                            break;
+                        case 1: // Manual
+                            openManual();
+                            break;
+                    }
+                })
+                .create()
+                .show();
+    }
+
+    private void toggleDarkMode() {
+        // Switch between light and dark themes
+        boolean isDarkMode = (getResources().getConfiguration().uiMode &
+                Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+        AppCompatDelegate.setDefaultNightMode(isDarkMode ?
+                AppCompatDelegate.MODE_NIGHT_NO :
+                AppCompatDelegate.MODE_NIGHT_YES);
+    }
+
+    private void openManual() {
+        Intent intent = new Intent(this, ManualActivity.class);
+        startActivity(intent);
+    }
+
 
     public void onBack(View view) {
         score = 0;
