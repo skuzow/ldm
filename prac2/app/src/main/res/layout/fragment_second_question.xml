@@ -35,22 +35,27 @@
         <RadioButton
             android:id="@+id/second_question_first_answer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/first_answer" />
 
         <RadioButton
             android:id="@+id/second_question_second_answer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/second_answer" />
 
         <RadioButton
             android:id="@+id/second_question_third_answer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/third_answer" />
 
         <RadioButton
             android:id="@+id/second_question_fourth_answer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/fourth_answer" />
     </RadioGroup>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

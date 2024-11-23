@@ -41,7 +41,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/cameron" />
+            android:src="@drawable/cameron"
+            android:contentDescription="@string/cameron"/>
 
         <TextView
             android:id="@+id/third_question_first_answer_text"
@@ -68,7 +69,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/spielberg" />
+            android:src="@drawable/spielberg"
+            android:contentDescription="@string/spielberg"/>
 
         <TextView
             android:id="@+id/third_question_second_answer_text"
@@ -96,7 +98,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/george_lucas" />
+            android:src="@drawable/george_lucas"
+            android:contentDescription="@string/george_lucas"/>
 
         <TextView
             android:id="@+id/third_question_third_answer_text"
@@ -123,7 +126,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ridley_scott" />
+            android:src="@drawable/ridley_scott"
+            android:contentDescription="@string/ridley_scott"/>
 
         <TextView
             android:id="@+id/third_question_fourth_answer_text"

@@ -4,12 +4,28 @@
     <string name="navigation_start">Start Over</string>
     <string name="navigation_next">Next Page</string>
     <!-- titles -->
-<!--    <string name="first_question_title">First Question</string>-->
-<!--    <string name="second_question_title">Second Question</string>-->
-<!--    <string name="third_question_title">Third Question</string>-->
-<!--    <string name="fourth_question_title">Fourth Question</string>-->
-<!--    <string name="fifth_question_title">Fifth Question</string>-->
-<!--    <string name="score_title">Score</string>-->
+    <!--    <string name="first_question_title">First Question</string>-->
+    <string name="option_one">Option 1</string>
+    <string name="option_two">Option 2</string>
+    <string name="option_three">Option 3\n</string>
+    <string name="option_four">Option 4</string>
+    <!--    <string name="second_question_title">Second Question</string>-->
+    <!--    <string name="third_question_title">Third Question</string>-->
+    <string name="cameron">Cameron</string>
+    <string name="spielberg">Spielberg</string>
+    <string name="george_lucas">George Lucas</string>
+    <string name="ridley_scott">Ridley Scott</string>
+    <!--    <string name="fourth_question_title">Fourth Question</string>-->
+    <string name="first_answer">Answer 1</string>
+    <string name="second_answer">Answer 2</string>
+    <string name="third_answer">Answer 3</string>
+    <string name="fourth_answer">Answer 4</string>
+    <!--    <string name="fifth_question_title">Fifth Question</string>-->
+    <string name="switch_one">Switch 1</string>
+    <string name="switch_two">Switch 2</string>
+    <string name="switch_three">Switch 3</string>
+    <string name="switch_four">Switch 4</string>
+    <!--    <string name="score_title">Score</string>-->
     <!-- score -->
     <string name="score_subtitle">SCORE</string>
     <string name="score_button">Start Again</string>
@@ -63,6 +79,10 @@
     <string name="success_reward_correct_answers_add_three_points_to_your_score">Success Reward: Correct answers add three points to your score.</string>
     <string name="failure_consequence_incorrect_answers_subtract_two_points_you_can_either_continue_or_restart_the_game">Failure Consequence: Incorrect answers subtract two points. You can either continue or restart the game.</string>
     <string name="Close">Close</string>
+
+
+
+
 
 
 </resources>

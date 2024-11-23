@@ -17,10 +17,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintVertical_bias="0.17" />
 
     <LinearLayout
         android:id="@+id/fifth_question_first_answer_layout"
@@ -36,7 +36,9 @@
         <Switch
             android:id="@+id/fifth_question_first_answer"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:contentDescription="@string/switch_one"
+            android:padding="13dp"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <TextView
@@ -61,7 +63,9 @@
         <Switch
             android:id="@+id/fifth_question_second_answer"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:contentDescription="@string/switch_two"
+            android:padding="13dp"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <TextView
@@ -86,7 +90,9 @@
         <Switch
             android:id="@+id/fifth_question_third_answer"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:contentDescription="@string/switch_three"
+            android:padding="13dp"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <TextView
@@ -111,7 +117,9 @@
         <Switch
             android:id="@+id/fifth_question_fourth_answer"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:contentDescription="@string/switch_four"
+            android:padding="13dp"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <TextView

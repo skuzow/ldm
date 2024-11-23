@@ -16,7 +16,6 @@ import com.ldm.cinequiz.R;
 import com.ldm.cinequiz.database.QuestionEntity;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class FourthQuestionFragment extends Fragment {
@@ -57,7 +56,7 @@ public class FourthQuestionFragment extends Fragment {
     private void setListViewListener() {
         ListView questionAnswers = fragmentView.findViewById(R.id.fourth_question_answers);
 
-        ArrayAdapter<String> adapterAnswers = new ArrayAdapter<String>(mainActivity, android.R.layout.simple_list_item_1, answers);
+        ArrayAdapter<String> adapterAnswers = new ArrayAdapter<>(mainActivity, android.R.layout.simple_list_item_1, answers);
 
         questionAnswers.setAdapter(adapterAnswers);
 

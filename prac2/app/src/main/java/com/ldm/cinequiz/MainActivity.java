@@ -33,7 +33,6 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
     private NavController navController;
 
     private QuestionDao questionDao;
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         createDatabaseInstance();
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.ldm.cinequiz.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
