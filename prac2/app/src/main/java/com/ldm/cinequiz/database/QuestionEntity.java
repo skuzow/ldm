@@ -13,10 +13,10 @@ import java.util.ArrayList;
 @Entity(tableName = "questions")
 public class QuestionEntity {
     @PrimaryKey
-    private int id;
+    private final int id;
 
-    private String title;
-    private ArrayList<String> answers = new ArrayList<>();
+    private final String title;
+    private final ArrayList<String> answers;
 
     public QuestionEntity(int id, String title, ArrayList<String> answers) {
         this.id = id;
@@ -26,26 +26,14 @@ public class QuestionEntity {
 
     public int getId() {
         return id;
-    };
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public ArrayList<String> getAnswers() {
         return answers;
-    }
-
-    public void setAnswers(ArrayList<String> answers) {
-        this.answers = answers;
     }
 }
 
@@ -59,7 +47,6 @@ class AnswersTypeConverter {
     @TypeConverter
     public static String fromArrayList(ArrayList<String> list) {
         Gson gson = new Gson();
-        String json = gson.toJson(list);
-        return json;
+        return gson.toJson(list);
     }
 }
