@@ -6,12 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.ldm.cinequiz.BaseActivity;
 import com.ldm.cinequiz.MainActivity;
 import com.ldm.cinequiz.R;
 
-public class ScoreActivity extends AppCompatActivity {
+public class ScoreActivity extends BaseActivity {
 
     @SuppressLint("DefaultLocale")
     @Override

@@ -11,7 +11,6 @@ import android.widget.Toast;
 import android.content.Intent;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -31,7 +30,7 @@ import com.ldm.cinequiz.ui.ScoreActivity;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private NavController navController;
 
