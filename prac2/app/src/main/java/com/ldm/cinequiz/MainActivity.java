@@ -35,6 +35,7 @@ public class MainActivity extends BaseActivity {
     private NavController navController;
 
     private QuestionDao questionDao;
+    private DarkModeManager darkModeManager;
 
     private boolean blockOnNext = true;
     private int score = 0; // max score, if perfect 15
@@ -48,6 +49,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         createDatabaseInstance();
+        setupStoredDarkMode();
 
         com.ldm.cinequiz.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -112,11 +114,15 @@ public class MainActivity extends BaseActivity {
 
     private void toggleDarkMode() {
         // Switch between light and dark themes
-        boolean isDarkMode = (getResources().getConfiguration().uiMode &
-                Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
-        AppCompatDelegate.setDefaultNightMode(isDarkMode ?
+        boolean isDarkMode = darkModeManager.getDarkMode();
+
+        int newMode = isDarkMode ?
                 AppCompatDelegate.MODE_NIGHT_NO :
-                AppCompatDelegate.MODE_NIGHT_YES);
+                AppCompatDelegate.MODE_NIGHT_YES;
+
+        AppCompatDelegate.setDefaultNightMode(newMode);
+
+        darkModeManager.setDarkMode(!isDarkMode);
     }
 
     private void openManual() {
@@ -228,6 +234,26 @@ public class MainActivity extends BaseActivity {
         questionDao = db.questionDao();
 
         seedDatabase();
+    }
+
+    private void setupStoredDarkMode() {
+        darkModeManager = new DarkModeManager(this);
+
+        if (darkModeManager.isDarkModeStored()) {
+            boolean isDarkMode = darkModeManager.getDarkMode();
+
+            int mode = isDarkMode ?
+                    AppCompatDelegate.MODE_NIGHT_YES :
+                    AppCompatDelegate.MODE_NIGHT_NO;
+
+            AppCompatDelegate.setDefaultNightMode(mode);
+        }
+        else {
+            boolean isDarkMode = (getResources().getConfiguration().uiMode &
+                    Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+
+            darkModeManager.setDarkMode(isDarkMode);
+        }
     }
 
     private void seedDatabase() {

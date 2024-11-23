@@ -65,8 +65,7 @@
     <string name="fifth_question_second_answer">Captain America:\nThe First Avenger</string>
     <string name="fifth_question_third_answer">Iron Man</string>
     <string name="fifth_question_fourth_answer">The Avengers</string>
-    <string name="settings">settings</string>
-
+    <string name="settings">Settings</string>
     <!-- Settings -->
     <string name="manual_title">User Manual</string>
     <string name="manual_content">Welcome to the manual! Here you can find detailed instructions on how to use the app effectively...</string>
@@ -79,10 +78,4 @@
     <string name="success_reward_correct_answers_add_three_points_to_your_score">Success Reward: Correct answers add three points to your score.</string>
     <string name="failure_consequence_incorrect_answers_subtract_two_points_you_can_either_continue_or_restart_the_game">Failure Consequence: Incorrect answers subtract two points. You can either continue or restart the game.</string>
     <string name="Close">Close</string>
-
-
-
-
-
-
 </resources>
