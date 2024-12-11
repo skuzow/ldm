@@ -61,10 +61,10 @@ public class PantallaJuego extends Pantalla {
             }
             if(event.type == TouchEvent.TOUCH_DOWN) {
                 if(event.x < 64 && event.y > 416) {
-                    mundo.jollyroger.girarIzquierda();
+                    mundo.snake.girarIzquierda();
                 }
                 if(event.x > 256 && event.y > 416) {
-                    mundo.jollyroger.girarDerecha();
+                    mundo.snake.girarDerecha();
                 }
             }
         }
@@ -143,40 +143,40 @@ public class PantallaJuego extends Pantalla {
     }
     private void drawWorld(Mundo mundo) {
         Graficos g = juego.getGraphics();
-        JollyRoger jollyroger = mundo.jollyroger;
-        Tripulacion head = jollyroger.partes.get(0);
-        Botin botin = mundo.botin;
+        Snake snake = mundo.snake;
+        Cuerpo cabeza = snake.partes.get(0);
+        Fruta fruta = mundo.fruta;
 
         Pixmap stainPixmap = null;
-        if(botin.tipo== Botin.TIPO_1)
-            stainPixmap = Assets.botin1;
-        if(botin.tipo == Botin.TIPO_2)
-            stainPixmap = Assets.botin2;
-        if(botin.tipo == Botin.TIPO_3)
-            stainPixmap = Assets.botin3;
-        int x = botin.x * 32;
-        int y = botin.y * 32;
+        if(fruta.tipo== Fruta.TIPO_1)
+            stainPixmap = Assets.fruta1;
+        if(fruta.tipo == Fruta.TIPO_2)
+            stainPixmap = Assets.fruta2;
+        if(fruta.tipo == Fruta.TIPO_3)
+            stainPixmap = Assets.fruta3;
+        int x = fruta.x * 32;
+        int y = fruta.y * 32;
         g.drawPixmap(stainPixmap, x, y);
 
-        int len = jollyroger.partes.size();
+        int len = snake.partes.size();
         for(int i = 1; i < len; i++) {
-            Tripulacion part = jollyroger.partes.get(i);
+            Cuerpo part = snake.partes.get(i);
             x = part.x * 32;
             y = part.y * 32;
-            g.drawPixmap(Assets.tripulacion, x, y);
+            g.drawPixmap(Assets.cuerpo, x, y);
         }
 
         Pixmap headPixmap = null;
-        if(jollyroger.direccion == JollyRoger.ARRIBA)
-            headPixmap = Assets.barcoarriba;
-        if(jollyroger.direccion == JollyRoger.IZQUIERDA)
-            headPixmap = Assets.barcoizquierda;
-        if(jollyroger.direccion == JollyRoger.ABAJO)
-            headPixmap = Assets.barcoabajo;
-        if(jollyroger.direccion == JollyRoger.DERECHA)
-            headPixmap = Assets.barcoderecha;
-        x = head.x * 32 + 16;
-        y = head.y * 32 + 16;
+        if(snake.direccion == Snake.ARRIBA)
+            headPixmap = Assets.snakearriba;
+        if(snake.direccion == Snake.IZQUIERDA)
+            headPixmap = Assets.snakeizquierda;
+        if(snake.direccion == Snake.ABAJO)
+            headPixmap = Assets.snakeabajo;
+        if(snake.direccion == Snake.DERECHA)
+            headPixmap = Assets.snakederecha;
+        x = cabeza.x * 32 + 16;
+        y = cabeza.y * 32 + 16;
 
         if (headPixmap != null) { // Verificación de null
         g.drawPixmap(headPixmap, x - headPixmap.getWidth() / 2, y - headPixmap.getHeight() / 2);

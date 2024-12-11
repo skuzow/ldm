@@ -15,14 +15,14 @@ public class Assets {
     public static Pixmap preparado;
     public static Pixmap menupausa;
     public static Pixmap finjuego;
-    public static Pixmap barcoarriba;
-    public static Pixmap barcoizquierda;
-    public static Pixmap barcoabajo;
-    public static Pixmap barcoderecha;
-    public static Pixmap tripulacion;
-    public static Pixmap botin1;
-    public static Pixmap botin2;
-    public static Pixmap botin3;
+    public static Pixmap snakearriba;
+    public static Pixmap snakeizquierda;
+    public static Pixmap snakeabajo;
+    public static Pixmap snakederecha;
+    public static Pixmap cuerpo;
+    public static Pixmap fruta1;
+    public static Pixmap fruta2;
+    public static Pixmap fruta3;
 
     public static Sonido pulsar;
     public static Sonido ataque;
