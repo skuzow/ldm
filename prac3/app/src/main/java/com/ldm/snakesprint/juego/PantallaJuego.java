@@ -79,7 +79,7 @@ public class PantallaJuego extends Pantalla {
             antiguaPuntuacion = mundo.puntuacion;
             puntuacion = "" + antiguaPuntuacion;
             if(Configuraciones.sonidoHabilitado)
-                Assets.ataque.play(1);
+                Assets.eat_sound.play(1);
         }
     }
 

@@ -42,7 +42,7 @@ public class MainMenuScreen extends Pantalla {
                         }
                     }
                 }
-                
+
                 // Start game
                 if (inBounds(event, 64, 220, 192, 42)) {
                     juego.setScreen(new PantallaJuego(juego));
