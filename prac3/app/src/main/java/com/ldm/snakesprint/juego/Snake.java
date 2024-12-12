@@ -61,10 +61,7 @@ public class Snake {
         Cuerpo cabeza = partes.get(0);
 
         // choque con bordes del juego
-        if(cabeza.x < 0) return true;
-        else if(cabeza.x > 9) return true;
-        else if(cabeza.y < 0) return true;
-        else if(cabeza.y > 12) return true;
+        if(cabeza.x < 0 || cabeza.x > 9 || cabeza.y < 0 || cabeza.y > 12) return true;
 
         // choque con cuerpo serpiente
         int len = partes.size();
