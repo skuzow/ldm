@@ -14,4 +14,6 @@ public interface Juego {
     Pantalla getCurrentScreen();
 
     Pantalla getStartScreen();
+
+    void setBackground();
 }

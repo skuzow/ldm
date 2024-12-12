@@ -127,7 +127,7 @@ public class PantallaJuego extends Pantalla {
         Graficos g = juego.getGraphics();
 
         if (g != null) { // Verifica que g no sea null
-            g.drawPixmap(Assets.fondo, 0, 0);
+            juego.setBackground();
             drawWorld(mundo);
             if (estado == EstadoJuego.Preparado)
                 drawReadyUI();

@@ -1,4 +1,6 @@
 package com.ldm.snakesprint.juego;
+
+import android.graphics.Color;
 import java.util.List;
 import com.ldm.snakesprint.Juego;
 import com.ldm.snakesprint.Graficos;
@@ -40,7 +42,7 @@ public class PantallaMaximasPuntuaciones extends Pantalla {
     public void present(float deltaTime) {
         Graficos g = juego.getGraphics();
 
-        g.drawPixmap(Assets.fondo, 0, 0);
+        juego.setBackground();
         g.drawPixmap(Assets.menuprincipal, 64, 20, 0, 42, 196, 42);
 
         int y = 100;

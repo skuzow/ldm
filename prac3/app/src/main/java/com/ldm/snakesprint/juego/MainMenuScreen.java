@@ -1,4 +1,5 @@
 package com.ldm.snakesprint.juego;
+
 import java.util.List;
 import com.ldm.snakesprint.Juego;
 import com.ldm.snakesprint.Graficos;
@@ -58,7 +59,7 @@ public class MainMenuScreen extends Pantalla {
     public void present(float deltaTime) {
         Graficos g = juego.getGraphics();
 
-        g.drawPixmap(Assets.fondo, 0, 0);
+        juego.setBackground();
         g.drawPixmap(Assets.logo, 32, 20);
         g.drawPixmap(Assets.menuprincipal, 64, 220);
         if(Configuraciones.sonidoHabilitado)

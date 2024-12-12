@@ -4,7 +4,6 @@ import com.ldm.snakesprint.Pixmap;
 import com.ldm.snakesprint.Sonido;
 
 public class Assets {
-    public static Pixmap fondo;
     public static Pixmap logo;
     public static Pixmap menuprincipal;
     public static Pixmap botones;

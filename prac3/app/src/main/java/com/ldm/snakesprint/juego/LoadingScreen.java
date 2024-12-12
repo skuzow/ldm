@@ -13,7 +13,6 @@ public class LoadingScreen extends Pantalla{
     @Override
     public void update(float deltaTime) {
         Graficos g = juego.getGraphics();
-        Assets.fondo = g.newPixmap("fondo.png", PixmapFormat.RGB565);
         Assets.logo = g.newPixmap("logo.png", PixmapFormat.ARGB4444);
         Assets.menuprincipal = g.newPixmap("menuprincipal.png", PixmapFormat.ARGB4444);
         Assets.botones = g.newPixmap("botones.png", PixmapFormat.ARGB4444);

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
@@ -127,5 +128,10 @@ public abstract class AndroidJuego extends Activity implements Juego {
     @Override
     public Pantalla getCurrentScreen() {
         return pantalla;
+    }
+
+    @Override
+    public void setBackground() {
+        graficos.drawRect(0, 0, graficos.getWidth(), graficos.getHeight(), Color.BLACK);
     }
 }

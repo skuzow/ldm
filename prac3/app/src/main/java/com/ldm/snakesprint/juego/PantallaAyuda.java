@@ -1,4 +1,5 @@
 package com.ldm.snakesprint.juego;
+
 import java.util.List;
 import com.ldm.snakesprint.Juego;
 import com.ldm.snakesprint.Graficos;
@@ -32,7 +33,7 @@ public class PantallaAyuda extends Pantalla {
     @Override
     public void present(float deltaTime) {
         Graficos g = juego.getGraphics();
-        g.drawPixmap(Assets.fondo, 0, 0);
+        juego.setBackground();
         g.drawPixmap(Assets.ayuda1, 64, 100);
         g.drawPixmap(Assets.botones, 256, 416, 0, 64, 64, 64);
     }
