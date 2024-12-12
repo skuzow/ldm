@@ -16,4 +16,6 @@ public interface Juego {
     Pantalla getStartScreen();
 
     void setBackground();
+
+    Musica getThemeMusic();
 }

@@ -17,6 +17,7 @@ import com.ldm.snakesprint.FileIO;
 import com.ldm.snakesprint.Juego;
 import com.ldm.snakesprint.Graficos;
 import com.ldm.snakesprint.Input;
+import com.ldm.snakesprint.Musica;
 import com.ldm.snakesprint.Pantalla;
 import com.ldm.snakesprint.juego.R;
 
@@ -28,6 +29,7 @@ public abstract class AndroidJuego extends Activity implements Juego {
     private FileIO fileIO;
     private Pantalla pantalla;
     private WakeLock wakeLock;
+    private Musica themeMusic; // Theme music field
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,11 @@ public abstract class AndroidJuego extends Activity implements Juego {
         // Configurar WakeLock con un nombre único
         PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "com.ldm.snakesprint:GLGame");
+
+        // Load the theme music using AndroidAudio
+        themeMusic = audio.nuevaMusica("theme.mp3");
+        themeMusic.setLooping(true); // Set looping for continuous play
+        themeMusic.setVolume(0.5f); // Adjust the volume
     }
 
     @Override
@@ -72,8 +79,14 @@ public abstract class AndroidJuego extends Activity implements Juego {
         super.onResume();
         // Adquirir WakeLock con un timeout
         if (wakeLock != null && !wakeLock.isHeld()) {
-            wakeLock.acquire(10 * 60 * 1000L /* 10 minutos */);
+            wakeLock.acquire(10 * 60 * 1000L);
         }
+
+        // Resume theme music
+        if (themeMusic != null && !themeMusic.isPlaying()) {
+            themeMusic.play();
+        }
+
         pantalla.resume();
         renderView.resume();
     }
@@ -85,11 +98,22 @@ public abstract class AndroidJuego extends Activity implements Juego {
         if (wakeLock != null && wakeLock.isHeld()) {
             wakeLock.release();
         }
+
+        // Pause theme music
+        if (themeMusic != null && themeMusic.isPlaying()) {
+            themeMusic.pause();
+        }
+
         renderView.pause();
         pantalla.pause();
 
         if (isFinishing()) {
             pantalla.dispose();
+
+            // Dispose of the theme music
+            if (themeMusic != null) {
+                themeMusic.dispose();
+            }
         }
     }
 
@@ -133,5 +157,10 @@ public abstract class AndroidJuego extends Activity implements Juego {
     @Override
     public void setBackground() {
         graficos.drawRect(0, 0, graficos.getWidth(), graficos.getHeight(), Color.BLACK);
+    }
+
+    @Override
+    public Musica getThemeMusic() {
+        return themeMusic;
     }
 }
