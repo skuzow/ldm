@@ -55,20 +55,19 @@ public class Snake {
             cabeza.y += 1;
         if(direccion == DERECHA)
             cabeza.x += 1;
-
-        if(cabeza.x < 0)
-            cabeza.x = 9;
-        if(cabeza.x > 9)
-            cabeza.x = 0;
-        if(cabeza.y < 0)
-            cabeza.y = 12;
-        if(cabeza.y > 12)
-            cabeza.y = 0;
     }
 
     public boolean comprobarChoque() {
-        int len = partes.size();
         Cuerpo cabeza = partes.get(0);
+
+        // choque con bordes del juego
+        if(cabeza.x < 0) return true;
+        else if(cabeza.x > 9) return true;
+        else if(cabeza.y < 0) return true;
+        else if(cabeza.y > 12) return true;
+
+        // choque con cuerpo serpiente
+        int len = partes.size();
         for(int i = 1; i < len; i++) {
             Cuerpo parte = partes.get(i);
             if(parte.x == cabeza.x && parte.y == cabeza.y)
