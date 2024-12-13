@@ -2,6 +2,8 @@ package com.ldm.snakesprint.juego;
 
 import java.util.List;
 import android.graphics.Color;
+import android.graphics.Paint;
+
 import com.ldm.snakesprint.Juego;
 import com.ldm.snakesprint.Graficos;
 import com.ldm.snakesprint.Input.TouchEvent;
@@ -215,12 +217,16 @@ public class PantallaJuego extends Pantalla {
 
     private void drawRunningUI() {
         Graficos g = juego.getGraphics();
-        g.drawPixmap(Assets.botones, 0, 0, 64, 128, 64, 64);
+
+        Paint transparentPaint = new Paint();
+        transparentPaint.setAlpha(128); // transparent
+
+        g.drawPixmap(Assets.botones, 0, 0, 64, 128, 64, 64, transparentPaint);
 
         if(Configuraciones.sonidoHabilitado)
-            g.drawPixmap(Assets.botones, 64, 0, 0, 0, 64, 64);
+            g.drawPixmap(Assets.botones, 64, 0, 0, 0, 64, 64, transparentPaint);
         else
-            g.drawPixmap(Assets.botones, 64, 0, 64, 0, 64, 64);
+            g.drawPixmap(Assets.botones, 64, 0, 64, 0, 64, 64, transparentPaint);
 
         g.drawLine(0, 416, 480, 416, Color.BLACK);
         g.drawPixmap(Assets.botones, 0, 416, 64, 64, 64, 64);

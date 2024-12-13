@@ -1,6 +1,5 @@
 package com.ldm.snakesprint.juego;
 
-import android.graphics.Color;
 import java.util.List;
 import com.ldm.snakesprint.Juego;
 import com.ldm.snakesprint.Graficos;

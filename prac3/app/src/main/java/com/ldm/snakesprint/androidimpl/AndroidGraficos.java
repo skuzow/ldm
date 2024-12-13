@@ -113,7 +113,17 @@ public class AndroidGraficos implements Graficos {
     @Override
     public void drawPixmap(Pixmap pixmap, int x, int y, int srcX, int srcY,
                            int srcWidth, int srcHeight) {
+        drawPixmapInternal(pixmap, x, y, srcX, srcY, srcWidth, srcHeight, null);
+    }
 
+    // Dibuja un Pixmap en una región específica del lienzo con paint incluido
+    public void drawPixmap(Pixmap pixmap, int x, int y, int srcX, int srcY,
+                           int srcWidth, int srcHeight, Paint paint) {
+        drawPixmapInternal(pixmap, x, y, srcX, srcY, srcWidth, srcHeight, paint);
+    }
+
+    private void drawPixmapInternal(Pixmap pixmap, int x, int y, int srcX, int srcY,
+                                   int srcWidth, int srcHeight, Paint paint) {
         // Define las coordenadas de la región fuente
         srcRect.left = srcX;
         srcRect.top = srcY;
@@ -126,8 +136,7 @@ public class AndroidGraficos implements Graficos {
         dstRect.right = x + srcWidth - 1;
         dstRect.bottom = y + srcHeight - 1;
 
-        canvas.drawBitmap(((AndroidPixmap) pixmap).bitmap, srcRect, dstRect,
-                null);
+        canvas.drawBitmap(((AndroidPixmap) pixmap).bitmap, srcRect, dstRect, paint);
     }
 
     // Dibuja un Pixmap en la posición especificada
