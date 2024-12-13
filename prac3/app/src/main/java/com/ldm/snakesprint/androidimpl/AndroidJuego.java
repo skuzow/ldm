@@ -82,11 +82,6 @@ public abstract class AndroidJuego extends Activity implements Juego {
             wakeLock.acquire(10 * 60 * 1000L);
         }
 
-        // Resume theme music
-        if (themeMusic != null && !themeMusic.isPlaying()) {
-            themeMusic.play();
-        }
-
         pantalla.resume();
         renderView.resume();
     }

@@ -85,8 +85,15 @@ public class MainMenuScreen extends Pantalla {
         juego.setBackground();
         g.drawPixmap(Assets.logo, 32, 20);
         g.drawPixmap(Assets.menuprincipal, 64, 220);
-        if(Configuraciones.sonidoHabilitado)
+
+        if(Configuraciones.sonidoHabilitado) {
+            // Resume theme music
+            if (juego.getThemeMusic() != null && !juego.getThemeMusic().isPlaying()) {
+                juego.getThemeMusic().play();
+            }
+
             g.drawPixmap(Assets.botones, 0, 416, 0, 0, 64, 64);
+        }
         else
             g.drawPixmap(Assets.botones, 0, 416, 64, 0, 64, 64);
     }
