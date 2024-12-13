@@ -5,6 +5,7 @@ import com.ldm.snakesprint.Juego;
 import com.ldm.snakesprint.Graficos;
 import com.ldm.snakesprint.Input.TouchEvent;
 import com.ldm.snakesprint.Pantalla;
+import com.ldm.snakesprint.androidimpl.AndroidJuego;
 
 public class MainMenuScreen extends Pantalla {
     public MainMenuScreen(Juego juego) {
@@ -18,32 +19,54 @@ public class MainMenuScreen extends Pantalla {
         juego.getInput().getKeyEvents();
 
         int len = touchEvents.size();
-        for(int i = 0; i < len; i++) {
+        for (int i = 0; i < len; i++) {
             TouchEvent event = touchEvents.get(i);
-            if(event.type == TouchEvent.TOUCH_UP) {
-                if(inBounds(event, 0, g.getHeight() - 64, 64, 64)) {
+            if (event.type == TouchEvent.TOUCH_UP) {
+                // Toggle sound button
+                if (inBounds(event, 0, g.getHeight() - 64, 64, 64)) {
                     Configuraciones.sonidoHabilitado = !Configuraciones.sonidoHabilitado;
-                    if(Configuraciones.sonidoHabilitado)
+                    if (Configuraciones.sonidoHabilitado) {
                         Assets.pulsar.play(1);
-                }
-                if(inBounds(event, 64, 220, 192, 42) ) {
-                    juego.setScreen(new PantallaJuego(juego));
-                    if(Configuraciones.sonidoHabilitado)
-                    {Assets.pulsar.play(1);
+                        if (juego instanceof AndroidJuego) {
+                            AndroidJuego androidJuego = (AndroidJuego) juego;
+                            if (androidJuego.getThemeMusic() != null && !androidJuego.getThemeMusic().isPlaying()) {
+                                androidJuego.getThemeMusic().play();
+                            }
+                        }
+                    } else {
+                        if (juego instanceof AndroidJuego) {
+                            AndroidJuego androidJuego = (AndroidJuego) juego;
+                            if (androidJuego.getThemeMusic() != null && androidJuego.getThemeMusic().isPlaying()) {
+                                androidJuego.getThemeMusic().pause();
+                            }
+                        }
                     }
+                }
 
+                // Start game
+                if (inBounds(event, 64, 220, 192, 42)) {
+                    juego.setScreen(new PantallaJuego(juego));
+                    if (Configuraciones.sonidoHabilitado) {
+                        Assets.pulsar.play(1);
+                    }
                     return;
                 }
-                if(inBounds(event, 64, 220 + 42, 192, 42) ) {
+
+                // High scores screen
+                if (inBounds(event, 64, 220 + 42, 192, 42)) {
                     juego.setScreen(new PantallaMaximasPuntuaciones(juego));
-                    if(Configuraciones.sonidoHabilitado)
+                    if (Configuraciones.sonidoHabilitado) {
                         Assets.pulsar.play(1);
+                    }
                     return;
                 }
-                if(inBounds(event, 64, 220 + 84, 192, 42) ) {
+
+                // Help screen
+                if (inBounds(event, 64, 220 + 84, 192, 42)) {
                     juego.setScreen(new PantallaAyuda(juego));
-                    if(Configuraciones.sonidoHabilitado)
+                    if (Configuraciones.sonidoHabilitado) {
                         Assets.pulsar.play(1);
+                    }
                     return;
                 }
             }
@@ -62,8 +85,15 @@ public class MainMenuScreen extends Pantalla {
         juego.setBackground();
         g.drawPixmap(Assets.logo, 32, 20);
         g.drawPixmap(Assets.menuprincipal, 64, 220);
-        if(Configuraciones.sonidoHabilitado)
+
+        if(Configuraciones.sonidoHabilitado) {
+            // Resume theme music
+            if (juego.getThemeMusic() != null && !juego.getThemeMusic().isPlaying()) {
+                juego.getThemeMusic().play();
+            }
+
             g.drawPixmap(Assets.botones, 0, 416, 0, 0, 64, 64);
+        }
         else
             g.drawPixmap(Assets.botones, 0, 416, 64, 0, 64, 64);
     }

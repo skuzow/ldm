@@ -2,11 +2,14 @@ package com.ldm.snakesprint.juego;
 
 import java.util.List;
 import android.graphics.Color;
+import android.graphics.Paint;
+
 import com.ldm.snakesprint.Juego;
 import com.ldm.snakesprint.Graficos;
 import com.ldm.snakesprint.Input.TouchEvent;
 import com.ldm.snakesprint.Pixmap;
 import com.ldm.snakesprint.Pantalla;
+import com.ldm.snakesprint.androidimpl.AndroidJuego;
 
 public class PantallaJuego extends Pantalla {
     enum EstadoJuego {
@@ -58,6 +61,27 @@ public class PantallaJuego extends Pantalla {
                     estado = EstadoJuego.Pausado;
                     return;
                 }
+
+                // Toggle sound button 
+                if (event.x >= 64 && event.x <= 128 && event.y >= 0 && event.y <= 64) {
+                    Configuraciones.sonidoHabilitado = !Configuraciones.sonidoHabilitado;
+                    if (Configuraciones.sonidoHabilitado) {
+                        Assets.pulsar.play(1);
+                        if (juego instanceof AndroidJuego) {
+                            AndroidJuego androidJuego = (AndroidJuego) juego;
+                            if (androidJuego.getThemeMusic() != null && !androidJuego.getThemeMusic().isPlaying()) {
+                                androidJuego.getThemeMusic().play();
+                            }
+                        }
+                    } else {
+                        if (juego instanceof AndroidJuego) {
+                            AndroidJuego androidJuego = (AndroidJuego) juego;
+                            if (androidJuego.getThemeMusic() != null && androidJuego.getThemeMusic().isPlaying()) {
+                                androidJuego.getThemeMusic().pause();
+                            }
+                        }
+                    }
+                }
             }
             if(event.type == TouchEvent.TOUCH_DOWN) {
                 if(event.x < 64 && event.y > 416) {
@@ -79,7 +103,7 @@ public class PantallaJuego extends Pantalla {
             antiguaPuntuacion = mundo.puntuacion;
             puntuacion = "" + antiguaPuntuacion;
             if(Configuraciones.sonidoHabilitado)
-                Assets.ataque.play(1);
+                Assets.eat_sound.play(1);
         }
     }
 
@@ -193,7 +217,17 @@ public class PantallaJuego extends Pantalla {
 
     private void drawRunningUI() {
         Graficos g = juego.getGraphics();
-        g.drawPixmap(Assets.botones, 0, 0, 64, 128, 64, 64);
+
+        Paint transparentPaint = new Paint();
+        transparentPaint.setAlpha(128); // transparent
+
+        g.drawPixmap(Assets.botones, 0, 0, 64, 128, 64, 64, transparentPaint);
+
+        if(Configuraciones.sonidoHabilitado)
+            g.drawPixmap(Assets.botones, 64, 0, 0, 0, 64, 64, transparentPaint);
+        else
+            g.drawPixmap(Assets.botones, 64, 0, 64, 0, 64, 64, transparentPaint);
+
         g.drawLine(0, 416, 480, 416, Color.BLACK);
         g.drawPixmap(Assets.botones, 0, 416, 64, 64, 64, 64);
         g.drawPixmap(Assets.botones, 256, 416, 0, 64, 64, 64);

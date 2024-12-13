@@ -1,5 +1,6 @@
 package com.ldm.snakesprint.juego;
 
+import com.ldm.snakesprint.Musica;
 import com.ldm.snakesprint.Pixmap;
 import com.ldm.snakesprint.Sonido;
 
@@ -24,7 +25,7 @@ public class Assets {
     public static Pixmap fruta3;
 
     public static Sonido pulsar;
-    public static Sonido ataque;
+    public static Sonido eat_sound;
     public static Sonido derrota;
 
 }

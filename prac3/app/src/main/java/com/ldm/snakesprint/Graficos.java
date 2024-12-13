@@ -1,5 +1,7 @@
 package com.ldm.snakesprint;
 
+import android.graphics.Paint;
+
 public interface Graficos {
     enum PixmapFormat {
         ARGB8888, ARGB4444, RGB565
@@ -17,6 +19,9 @@ public interface Graficos {
 
     void drawPixmap(Pixmap pixmap, int x, int y, int srcX, int srcY,
                            int srcWidth, int srcHeight);
+
+    void drawPixmap(Pixmap pixmap, int x, int y, int srcX, int srcY,
+                    int srcWidth, int srcHeight, Paint paint);
 
     void drawPixmap(Pixmap pixmap, int x, int y);
 

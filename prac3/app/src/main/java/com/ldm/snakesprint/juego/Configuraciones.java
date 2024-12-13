@@ -13,7 +13,7 @@ public class Configuraciones {
     public static int[] maxPuntuaciones = new int[] { 100, 80, 50, 30, 10 };
 
     public static void cargar(FileIO files) {
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(files.leerArchivo(".piratas")))) {
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(files.leerArchivo(".snakesprint")))) {
             sonidoHabilitado = Boolean.parseBoolean(in.readLine());
             for (int i = 0; i < 5; i++) {
                 maxPuntuaciones[i] = Integer.parseInt(in.readLine());
@@ -26,7 +26,7 @@ public class Configuraciones {
     }
 
     public static void save(FileIO files) {
-        try (BufferedWriter out = new BufferedWriter(new OutputStreamWriter(files.escribirArchivo(".piratas")))) {
+        try (BufferedWriter out = new BufferedWriter(new OutputStreamWriter(files.escribirArchivo(".snakesprint")))) {
             out.write(Boolean.toString(sonidoHabilitado));
             out.write("\n");
             for (int i = 0; i < 5; i++) {
