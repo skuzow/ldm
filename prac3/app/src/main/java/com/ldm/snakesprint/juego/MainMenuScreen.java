@@ -92,10 +92,10 @@ public class MainMenuScreen extends Pantalla {
                 juego.getThemeMusic().play();
             }
 
-            g.drawPixmap(Assets.botones, 0, 416, 0, 0, 64, 64);
+            g.drawPixmap(Assets.botones, 0, 416, 256, 192, 60, 60);
         }
         else
-            g.drawPixmap(Assets.botones, 0, 416, 64, 0, 64, 64);
+            g.drawPixmap(Assets.botones, 0, 416, 192, 192, 64, 64);
     }
 
     @Override

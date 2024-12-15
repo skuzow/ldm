@@ -221,16 +221,16 @@ public class PantallaJuego extends Pantalla {
         Paint transparentPaint = new Paint();
         transparentPaint.setAlpha(128); // transparent
 
-        g.drawPixmap(Assets.botones, 0, 0, 64, 128, 64, 64, transparentPaint);
+        g.drawPixmap(Assets.botones, 0, 6, 128, 70, 64, 64, transparentPaint);
 
         if(Configuraciones.sonidoHabilitado)
-            g.drawPixmap(Assets.botones, 64, 0, 0, 0, 64, 64, transparentPaint);
+            g.drawPixmap(Assets.botones, 64, 8, 256, 192, 64, 64, transparentPaint);
         else
-            g.drawPixmap(Assets.botones, 64, 0, 64, 0, 64, 64, transparentPaint);
+            g.drawPixmap(Assets.botones, 64, 8, 192, 192, 64, 64, transparentPaint);
 
         g.drawLine(0, 416, 480, 416, Color.BLACK);
-        g.drawPixmap(Assets.botones, 0, 416, 64, 64, 64, 64);
-        g.drawPixmap(Assets.botones, 256, 416, 0, 64, 64, 64);
+        g.drawPixmap(Assets.botones, 5, 416, 128, 5, 64, 64);
+        g.drawPixmap(Assets.botones, 256, 416, 70, 5, 64, 64);
     }
 
     private void drawPausedUI() {
