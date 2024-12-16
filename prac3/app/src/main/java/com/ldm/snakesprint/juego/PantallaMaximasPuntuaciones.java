@@ -50,7 +50,7 @@ public class PantallaMaximasPuntuaciones extends Pantalla {
             y += 50;
         }
 
-        g.drawPixmap(Assets.botones, 0, 416, 64, 64, 64, 64);
+        g.drawPixmap(Assets.botones, 0, 416, 10, 130, 64, 64);
     }
 
     public void dibujarTexto(Graficos g, String linea, int x, int y) {
