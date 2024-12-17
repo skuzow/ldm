@@ -224,9 +224,9 @@ public class PantallaJuego extends Pantalla {
         g.drawPixmap(Assets.botones, 0, 6, 128, 70, 64, 64, transparentPaint);
 
         if(Configuraciones.sonidoHabilitado)
-            g.drawPixmap(Assets.botones, 64, 8, 256, 192, 64, 64, transparentPaint);
+            g.drawPixmap(Assets.botones, 64, 8, 256, 192, 60, 60, transparentPaint);
         else
-            g.drawPixmap(Assets.botones, 64, 8, 192, 192, 64, 64, transparentPaint);
+            g.drawPixmap(Assets.botones, 64, 8, 196, 192, 60, 60, transparentPaint);
 
         g.drawLine(0, 416, 480, 416, Color.BLACK);
         g.drawPixmap(Assets.botones, 5, 416, 128, 5, 64, 64);
