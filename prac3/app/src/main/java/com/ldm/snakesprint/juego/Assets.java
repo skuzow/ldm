@@ -1,6 +1,5 @@
 package com.ldm.snakesprint.juego;
 
-import com.ldm.snakesprint.Musica;
 import com.ldm.snakesprint.Pixmap;
 import com.ldm.snakesprint.Sonido;
 
