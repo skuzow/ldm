@@ -1,4 +1,4 @@
-package com.ldm.prac4;
+package com.ldm.quicktask;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.ldm.prac4.databinding.FragmentFirstBinding;
+import com.ldm.quicktask.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 

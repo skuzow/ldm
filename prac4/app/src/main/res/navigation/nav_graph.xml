@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.ldm.prac4.FirstFragment"
+        android:name="com.ldm.quicktask.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/CreateTaskFragment"
-        android:name="com.ldm.prac4.CreateTaskFragment"
+        android:name="com.ldm.quicktask.CreateTaskFragment"
         android:label="@string/createtaskfragment"
         tools:layout="@layout/fragment_second">
 
@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/ShowMyTasks"
-        android:name="com.ldm.prac4.ShowTasksFragment"
+        android:name="com.ldm.quicktask.ShowTasksFragment"
         android:label="@string/show_my_tasks"
         tools:layout="@layout/fragment_second">
 

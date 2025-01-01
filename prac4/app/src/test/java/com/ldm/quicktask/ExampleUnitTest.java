@@ -1,4 +1,4 @@
-package com.ldm.prac4;
+package com.ldm.quicktask;
 
 import org.junit.Test;
 

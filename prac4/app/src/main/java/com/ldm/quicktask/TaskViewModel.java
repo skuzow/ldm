@@ -1,13 +1,13 @@
-package com.ldm.prac4;
+package com.ldm.quicktask;
 
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.ldm.prac4.database.AppDatabase;
-import com.ldm.prac4.database.TaskDao;
-import com.ldm.prac4.database.TaskEntity;
+import com.ldm.quicktask.database.AppDatabase;
+import com.ldm.quicktask.database.TaskDao;
+import com.ldm.quicktask.database.TaskEntity;
 
 import java.util.List;
 

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.ldm.prac4"
+    namespace = "com.ldm.quicktask"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.ldm.prac4"
+        applicationId = "com.ldm.quicktask"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
