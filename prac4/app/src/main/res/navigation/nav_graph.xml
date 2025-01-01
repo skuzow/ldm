@@ -12,17 +12,31 @@
         tools:layout="@layout/fragment_first">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_FirstFragment_to_CreateTaskFragment"
+            app:destination="@id/CreateTaskFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_ShowMyTasks"
+            app:destination="@id/ShowMyTasks" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.ldm.prac4.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:id="@+id/CreateTaskFragment"
+        android:name="com.ldm.prac4.CreateTaskFragment"
+        android:label="@string/createtaskfragment"
         tools:layout="@layout/fragment_second">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_CreateTaskFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ShowMyTasks"
+        android:name="com.ldm.prac4.ShowTasksFragment"
+        android:label="@string/show_my_tasks"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_ShowMyTasks_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>

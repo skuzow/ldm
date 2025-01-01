@@ -43,4 +43,7 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="create_new_task">Create New Task</string>
+    <string name="show_my_tasks">Show My Tasks</string>
+    <string name="createtaskfragment">CreateTaskFragment</string>
 </resources>
