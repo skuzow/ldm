@@ -14,12 +14,13 @@ public class TaskEntity {
     private boolean check = false;
     private String title;
     private String description;
-    private Date date = new Date();
+    private Date date;
 
-    public TaskEntity(int id, String title, String description) {
+    public TaskEntity(int id, String title, String description, Date date) {
         this.id = id;
         this.title = title;
         this.description = description;
+        this.date = date;
     }
 
     public void setCheck(boolean check) {
