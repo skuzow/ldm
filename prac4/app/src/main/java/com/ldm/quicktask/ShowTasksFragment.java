@@ -1,4 +1,4 @@
-package com.ldm.prac4;
+package com.ldm.quicktask;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.ldm.prac4.database.TaskEntity;
+import com.ldm.quicktask.database.TaskEntity;
 
 import java.util.ArrayList;
 

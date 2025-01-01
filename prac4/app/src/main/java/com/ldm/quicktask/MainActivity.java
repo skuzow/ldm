@@ -1,4 +1,4 @@
-package com.ldm.prac4;
+package com.ldm.quicktask;
 
 import android.os.Bundle;
 
@@ -13,7 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.ldm.prac4.databinding.ActivityMainBinding;
+import com.ldm.quicktask.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;

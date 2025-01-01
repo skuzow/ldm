@@ -1,4 +1,4 @@
-package com.ldm.prac4.dialogs;
+package com.ldm.quicktask.dialogs;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -9,7 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.ContextThemeWrapper;
 import android.widget.TextView;
 
-import com.ldm.prac4.R;
+import com.ldm.quicktask.R;
 
 import java.util.Calendar;
 import java.util.Objects;
@@ -22,7 +22,7 @@ public class DateTimeDialog {
         date[1] = c.get(Calendar.MONTH);
         date[2] = c.get(Calendar.YEAR);
 
-        ContextThemeWrapper newContext = new ContextThemeWrapper(context, R.style.Theme_Prac4_DatePickerDialog);
+        ContextThemeWrapper newContext = new ContextThemeWrapper(context, R.style.Theme_QuickTask_DatePickerDialog);
         DatePickerDialog dialog = new DatePickerDialog(newContext,
                 (view1, year, month, dayOfMonth) -> {
                     date[0] = dayOfMonth;
@@ -48,7 +48,7 @@ public class DateTimeDialog {
         time[0] = c.get(Calendar.HOUR_OF_DAY);
         time[1] = c.get(Calendar.MINUTE);
 
-        ContextThemeWrapper newContext = new ContextThemeWrapper(context, R.style.Theme_Prac4_Dialog);
+        ContextThemeWrapper newContext = new ContextThemeWrapper(context, R.style.Theme_QuickTask_Dialog);
         TimePickerDialog tmd = new TimePickerDialog(newContext,
                 (view1, hourOfDay, minute) -> {
                     time[0] = hourOfDay;

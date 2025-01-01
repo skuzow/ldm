@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "prac4"
+rootProject.name = "QuickTask"
 include(":app")

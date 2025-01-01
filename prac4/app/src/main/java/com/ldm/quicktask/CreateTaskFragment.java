@@ -1,4 +1,4 @@
-package com.ldm.prac4;
+package com.ldm.quicktask;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,9 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.ldm.prac4.databinding.FragmentSecondBinding;
-import com.ldm.prac4.database.TaskEntity;
-import com.ldm.prac4.dialogs.DateTimeDialog;
+import com.ldm.quicktask.databinding.FragmentSecondBinding;
+import com.ldm.quicktask.database.TaskEntity;
+import com.ldm.quicktask.dialogs.DateTimeDialog;
 
 import java.util.Calendar;
 import java.util.Date;

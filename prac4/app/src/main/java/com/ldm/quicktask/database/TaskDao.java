@@ -1,4 +1,4 @@
-package com.ldm.prac4.database;
+package com.ldm.quicktask.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
