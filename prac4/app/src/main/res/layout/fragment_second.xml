@@ -36,18 +36,62 @@
             android:minHeight="100dp"/>
 
         <TextView
-            android:id="@+id/textViewDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Date: Select"
+            android:id="@+id/taskAddDate"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:text="Date"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.743"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextDescription"
-            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.569" />
+
+        <TextView
+            android:id="@+id/taskAddTime"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:text="Time"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.743"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.721" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/taskAddEditDateButton"
+            android:layout_width="55dp"
+            android:layout_height="56dp"
             android:clickable="true"
-            android:focusable="true"
-            android:padding="20dp"
-            android:background="?android:attr/selectableItemBackground" />
+            android:contentDescription="Date"
+            android:src="@android:drawable/ic_menu_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.185"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.569" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/taskAddEditTimeButton"
+            android:layout_width="55dp"
+            android:layout_height="56dp"
+            android:clickable="true"
+            android:contentDescription="Time"
+            android:src="@android:drawable/ic_menu_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.185"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.721" />
 
         <Button
             android:id="@+id/buttonSave"
@@ -56,7 +100,7 @@
             android:text="Save Task"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewDate"
+            app:layout_constraintTop_toBottomOf="@id/taskAddEditTimeButton"
             android:layout_marginTop="16dp"
             android:padding="10dp" />
         <Button
