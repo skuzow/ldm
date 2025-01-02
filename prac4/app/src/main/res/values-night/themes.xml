@@ -6,4 +6,7 @@
     </style>
     <style name="Theme.QuickTask.Dialog" parent="Theme.AppCompat.DayNight.Dialog" />
     <style name="Theme.QuickTask.DatePickerDialog" parent="@android:style/Theme.Holo.Dialog.MinWidth" />
+    <style name="Theme.QuickTask.CheckBox">
+        <item name="colorControlActivated">@color/white</item>
+    </style>
 </resources>

@@ -2,12 +2,19 @@
     <string name="app_name">QuickTask</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
+    <string name="create_task_fragment">Create Task</string>
+    <string name="info_task_fragment">Info Task</string>
+    <!-- Placeholders -->
+    <string name="task_title">Task Title</string>
+    <string name="task_description">Task Description</string>
+    <!-- Buttons -->
     <string name="create_new_task">Create New Task</string>
-    <string name="show_my_tasks">Show My Tasks</string>
-    <string name="createtaskfragment">CreateTaskFragment</string>
+    <string name="save_task">Save Task</string>
+    <string name="back">Back</string>
+    <!-- Words -->
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="week_day">Week Day</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
 </resources>

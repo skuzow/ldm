@@ -3,40 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/ListTaskFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.ldm.quicktask.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/ListTaskFragment"
+        android:name="com.ldm.quicktask.fragments.ListTaskFragment"
+        tools:layout="@layout/fragment_list_task">
 
         <action
-            android:id="@+id/action_FirstFragment_to_CreateTaskFragment"
-            app:destination="@id/CreateTaskFragment" />
+            android:id="@+id/action_ListTaskFragment_to_InfoTaskFragment"
+            app:destination="@id/InfoTaskFragment" />
         <action
-            android:id="@+id/action_FirstFragment_to_ShowMyTasks"
-            app:destination="@id/ShowMyTasks" />
+            android:id="@+id/action_ListTaskFragment_to_CreateTaskFragment"
+            app:destination="@id/CreateTaskFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/InfoTaskFragment"
+        android:name="com.ldm.quicktask.fragments.InfoTaskFragment"
+        android:label="@string/info_task_fragment"
+        tools:layout="@layout/fragment_info_task">
+
+        <action
+            android:id="@+id/action_InfoTaskFragment_to_ListTaskFragment"
+            app:destination="@id/ListTaskFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/CreateTaskFragment"
-        android:name="com.ldm.quicktask.CreateTaskFragment"
-        android:label="@string/createtaskfragment"
-        tools:layout="@layout/fragment_second">
+        android:name="com.ldm.quicktask.fragments.CreateTaskFragment"
+        android:label="@string/create_task_fragment"
+        tools:layout="@layout/fragment_create_task">
 
         <action
-            android:id="@+id/action_CreateTaskFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/ShowMyTasks"
-        android:name="com.ldm.quicktask.ShowTasksFragment"
-        android:label="@string/show_my_tasks"
-        tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_ShowMyTasks_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_CreateTaskFragment_to_ListTaskFragment"
+            app:destination="@id/ListTaskFragment" />
     </fragment>
 </navigation>

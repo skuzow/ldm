@@ -1,6 +1,5 @@
 package com.ldm.quicktask.database;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -15,8 +14,11 @@ public interface TaskDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(TaskEntity task);
 
-    @Query("SELECT * FROM tasks")  // Query to get all tasks
-    LiveData<List<TaskEntity>> getAllTasks();
+    @Query("SELECT * FROM tasks")
+    List<TaskEntity> getAllTasks();
+
+    @Query("SELECT * FROM tasks WHERE id = :id")
+    TaskEntity findTaskById(int id);
 
     @Update
     void update(TaskEntity taskEntity);
