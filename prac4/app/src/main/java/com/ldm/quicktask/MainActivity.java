@@ -2,32 +2,37 @@ package com.ldm.quicktask;
 
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.room.Room;
 
+import com.ldm.quicktask.database.AppDatabase;
+import com.ldm.quicktask.database.TaskDao;
+import com.ldm.quicktask.database.TaskEntity;
 import com.ldm.quicktask.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.Date;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+    private TaskDao taskDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        createDatabaseInstance();
+
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
@@ -35,15 +40,43 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+    }
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show();
-            }
-        });
+    private void createDatabaseInstance() {
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "quicktask_database")
+                .allowMainThreadQueries()
+                .build();
+
+        taskDao = db.taskDao();
+
+        seedDatabase();
+    }
+
+    private void seedDatabase() {
+        taskDao.insert(new TaskEntity(0, "test1", "test description 1", new Date()));
+        taskDao.insert(new TaskEntity(1, "test2", "test description 2", new Date()));
+    }
+
+    public List<TaskEntity> getAllTasks() {
+        List<TaskEntity> tasks = taskDao.getAllTasks();
+        TaskEntity task = taskDao.findTaskById(1);
+        return tasks;
+    }
+
+    public TaskEntity findTaskById(int id) {
+        return taskDao.findTaskById(id);
+    }
+
+    public void createTask(TaskEntity task) {
+        taskDao.insert(task);
+    }
+
+    public void updateTask(TaskEntity task) {
+        taskDao.update(task);
+    }
+
+    public void deleteTask(TaskEntity task) {
+        taskDao.delete(task);
     }
 
     @Override
