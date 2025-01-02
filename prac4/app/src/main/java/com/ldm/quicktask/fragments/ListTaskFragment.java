@@ -11,7 +11,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ldm.quicktask.MainActivity;
+import com.ldm.quicktask.activities.MainActivity;
 import com.ldm.quicktask.R;
 import com.ldm.quicktask.adapters.ListAdapter;
 import com.ldm.quicktask.database.TaskEntity;

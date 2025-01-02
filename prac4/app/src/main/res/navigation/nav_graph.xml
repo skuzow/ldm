@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/ListTaskFragment"
         android:name="com.ldm.quicktask.fragments.ListTaskFragment"
-        android:label="@string/list_task_fragment"
         tools:layout="@layout/fragment_list_task">
 
         <action

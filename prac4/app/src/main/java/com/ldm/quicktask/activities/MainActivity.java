@@ -1,15 +1,15 @@
-package com.ldm.quicktask;
+package com.ldm.quicktask.activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.room.Room;
 
+import com.ldm.quicktask.R;
 import com.ldm.quicktask.database.AppDatabase;
 import com.ldm.quicktask.database.TaskDao;
 import com.ldm.quicktask.database.TaskEntity;
@@ -58,9 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public List<TaskEntity> getAllTasks() {
-        List<TaskEntity> tasks = taskDao.getAllTasks();
-        TaskEntity task = taskDao.findTaskById(1);
-        return tasks;
+        return taskDao.getAllTasks();
     }
 
     public TaskEntity findTaskById(int id) {

@@ -2,10 +2,8 @@
     <string name="app_name">QuickTask</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="list_task_fragment">Tasks</string>
     <string name="create_task_fragment">Create Task</string>
     <string name="info_task_fragment">Info Task</string>
 
     <string name="create_new_task">Create New Task</string>
-    <string name="show_my_tasks">Show My Tasks</string>
 </resources>

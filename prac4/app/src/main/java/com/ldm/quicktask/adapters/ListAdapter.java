@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ldm.quicktask.MainActivity;
+import com.ldm.quicktask.activities.MainActivity;
 import com.ldm.quicktask.R;
 import com.ldm.quicktask.database.TaskEntity;
 

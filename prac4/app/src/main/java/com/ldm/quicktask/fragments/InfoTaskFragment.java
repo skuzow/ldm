@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ldm.quicktask.MainActivity;
+import com.ldm.quicktask.activities.MainActivity;
 import com.ldm.quicktask.database.TaskEntity;
 import com.ldm.quicktask.databinding.FragmentInfoTaskBinding;
 

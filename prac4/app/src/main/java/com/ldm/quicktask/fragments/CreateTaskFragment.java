@@ -10,10 +10,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.ldm.quicktask.MainActivity;
+import com.ldm.quicktask.activities.MainActivity;
 import com.ldm.quicktask.R;
 import com.ldm.quicktask.databinding.FragmentCreateTaskBinding;
 import com.ldm.quicktask.database.TaskEntity;
