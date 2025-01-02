@@ -46,14 +46,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
-                    android:text="Title"
+                    android:text="@string/title"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/descriptionTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Description"
+                    android:text="@string/description"
                     android:textSize="18sp"/>
             </LinearLayout>
             <LinearLayout
@@ -63,13 +63,14 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="50dp"
                 android:layout_alignParentEnd="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="RelativeOverlap">
                 <TextView
                     android:id="@+id/dayTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="6dp"
-                    android:text="Week Day"
+                    android:text="@string/week_day"
                     android:textSize="15sp"
                     android:textStyle="bold"/>
                 <TextView
@@ -78,11 +79,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:gravity="right"
-                    android:text="Date"
+                    android:text="@string/date"
                     android:textSize="8sp"
                     tools:ignore="RtlHardcoded,SmallSp" />
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

@@ -60,7 +60,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
         CheckBox check;
         TextView title, description, day, date;
-        CardView cv;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -70,7 +69,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             description = itemView.findViewById(R.id.descriptionTextView);
             day = itemView.findViewById(R.id.dayTextView);
             date = itemView.findViewById(R.id.dateTextView);
-            cv = itemView.findViewById(R.id.cv);
         }
 
         public void bindData(final TaskEntity task) {

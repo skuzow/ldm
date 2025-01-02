@@ -4,6 +4,17 @@
     <!-- Strings used for fragments for navigation -->
     <string name="create_task_fragment">Create Task</string>
     <string name="info_task_fragment">Info Task</string>
-
+    <!-- Placeholders -->
+    <string name="task_title">Task Title</string>
+    <string name="task_description">Task Description</string>
+    <!-- Buttons -->
     <string name="create_new_task">Create New Task</string>
+    <string name="save_task">Save Task</string>
+    <string name="back">Back</string>
+    <!-- Words -->
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="week_day">Week Day</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
 </resources>
