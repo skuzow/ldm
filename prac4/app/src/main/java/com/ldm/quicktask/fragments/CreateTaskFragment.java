@@ -1,4 +1,4 @@
-package com.ldm.quicktask;
+package com.ldm.quicktask.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,17 +13,22 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.ldm.quicktask.databinding.FragmentSecondBinding;
+import com.ldm.quicktask.MainActivity;
+import com.ldm.quicktask.R;
+import com.ldm.quicktask.databinding.FragmentCreateTaskBinding;
 import com.ldm.quicktask.database.TaskEntity;
 import com.ldm.quicktask.dialogs.DateTimeDialog;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
+import java.util.UUID;
 
 public class CreateTaskFragment extends Fragment {
 
-    private FragmentSecondBinding binding;
-    private TaskViewModel taskViewModel;
+    private FragmentCreateTaskBinding binding;
+    private MainActivity mainActivity;
+
     private EditText editTextTitle, editTextDescription;
     private TextView dateDisplay, timeDisplay;
 
@@ -35,8 +40,10 @@ public class CreateTaskFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentCreateTaskBinding.inflate(inflater, container, false);
         View view = this.binding.getRoot();
+
+        mainActivity = Objects.requireNonNull((MainActivity) getActivity());
 
         timeDisplay = view.findViewById(R.id.taskAddTime);
         dateDisplay = view.findViewById(R.id.taskAddDate);
@@ -73,8 +80,6 @@ public class CreateTaskFragment extends Fragment {
             DateTimeDialog.editTime(this.getContext(), this.timeDisplay, this.time);
         });
 
-        taskViewModel = new ViewModelProvider(this).get(TaskViewModel.class);
-
         editTextTitle = binding.editTextTitle;
         editTextDescription = binding.editTextDescription;
 
@@ -88,28 +93,19 @@ public class CreateTaskFragment extends Fragment {
                 dateTaskCalendar.set(this.date[2], this.date[1], this.date[0], this.time[0], this.time[1]);
                 Date dateTask = dateTaskCalendar.getTime();
 
-                TaskEntity taskEntity = new TaskEntity(0, title, description, dateTask);
+                TaskEntity taskEntity = new TaskEntity(UUID.randomUUID().hashCode(), title, description, dateTask);
 
-                taskViewModel.insert(taskEntity);
+                mainActivity.createTask(taskEntity);
 
                 Toast.makeText(getContext(), "Task Created", Toast.LENGTH_SHORT).show();
 
                 NavHostFragment.findNavController(CreateTaskFragment.this)
-                        .navigate(R.id.action_CreateTaskFragment_to_FirstFragment);
-
-                editTextTitle.setText("");
-                editTextDescription.setText("");
+                        .navigate(R.id.action_CreateTaskFragment_to_ListTaskFragment);
             } else {
                 // Show error message if input fields are empty
                 Toast.makeText(getContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
             }
         });
-
-        // Set up the Back button click listener
-        binding.buttonBack.setOnClickListener(v ->
-                NavHostFragment.findNavController(CreateTaskFragment.this)
-                        .navigate(R.id.action_CreateTaskFragment_to_FirstFragment)
-        );
     }
 
     @Override

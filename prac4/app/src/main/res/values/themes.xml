@@ -7,4 +7,5 @@
     <style name="Theme.QuickTask" parent="Base.Theme.QuickTask" />
     <style name="Theme.QuickTask.Dialog" parent="Theme.QuickTask" />
     <style name="Theme.QuickTask.DatePickerDialog" parent="@android:style/Theme.Holo.Light.Dialog.MinWidth" />
+    <style name="Theme.QuickTask.CheckBox" />
 </resources>
