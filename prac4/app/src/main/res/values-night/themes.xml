@@ -1,8 +1,16 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.QuickTask" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
     <style name="Theme.QuickTask.Dialog" parent="Theme.AppCompat.DayNight.Dialog" />
     <style name="Theme.QuickTask.DatePickerDialog" parent="@android:style/Theme.Holo.Dialog.MinWidth" />
