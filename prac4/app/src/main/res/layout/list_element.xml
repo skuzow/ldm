@@ -82,7 +82,7 @@
                     android:layout_marginEnd="8dp"
                     android:gravity="right"
                     android:text="@string/date"
-                    android:textSize="13sp"
+                    android:textSize="10sp"
                     tools:ignore="RtlHardcoded,SmallSp" />
             </LinearLayout>
         </RelativeLayout>

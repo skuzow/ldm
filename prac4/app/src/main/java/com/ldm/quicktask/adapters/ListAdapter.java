@@ -79,12 +79,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             String descriptionText = cutText(task.getDescription());
             description.setText(descriptionText);
 
+            Locale locale = mainActivity.getResources().getConfiguration().getLocales().get(0);
+
             Date date = task.getDate();
-            Locale locale = new Locale("EN");
             String dayText = new SimpleDateFormat("EEEE", locale).format(date);
             day.setText(capitalize(dayText));
 
-            String dateText = new SimpleDateFormat("dd/MM/yy", Locale.US).format(date);
+            String dateText = new SimpleDateFormat("dd/MM/yy", locale).format(date);
             this.date.setText(dateText);
 
             itemView.setOnClickListener(view -> listener.onItemClick(task));
