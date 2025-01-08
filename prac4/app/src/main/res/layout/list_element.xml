@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="4dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="3dp"
     app:cardUseCompatPadding="true"
     app:cardPreventCornerOverlap="false">
 
@@ -24,13 +24,15 @@
             tools:ignore="UselessParent">
             <CheckBox
                 android:id="@+id/taskCheckBox"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_gravity="center"
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
                 android:theme="@style/Theme.QuickTask.CheckBox"/>
             <LinearLayout
                 android:id="@+id/InfoLinearLayout"
@@ -80,7 +82,7 @@
                     android:layout_marginEnd="8dp"
                     android:gravity="right"
                     android:text="@string/date"
-                    android:textSize="8sp"
+                    android:textSize="13sp"
                     tools:ignore="RtlHardcoded,SmallSp" />
             </LinearLayout>
         </RelativeLayout>

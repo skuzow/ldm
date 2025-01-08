@@ -3,40 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/ListTaskFragment">
+    app:startDestination="@id/navigation_list_task">
 
     <fragment
-        android:id="@+id/ListTaskFragment"
+        android:id="@+id/navigation_list_task"
         android:name="com.ldm.quicktask.fragments.ListTaskFragment"
         tools:layout="@layout/fragment_list_task">
 
         <action
             android:id="@+id/action_ListTaskFragment_to_InfoTaskFragment"
-            app:destination="@id/InfoTaskFragment" />
+            app:destination="@id/navigation_info_task" />
         <action
             android:id="@+id/action_ListTaskFragment_to_CreateTaskFragment"
-            app:destination="@id/CreateTaskFragment" />
+            app:destination="@id/navigation_create_task" />
     </fragment>
 
     <fragment
-        android:id="@+id/InfoTaskFragment"
+        android:id="@+id/navigation_info_task"
         android:name="com.ldm.quicktask.fragments.InfoTaskFragment"
-        android:label="@string/info_task_fragment"
         tools:layout="@layout/fragment_info_task">
 
         <action
             android:id="@+id/action_InfoTaskFragment_to_ListTaskFragment"
-            app:destination="@id/ListTaskFragment" />
+            app:destination="@id/navigation_list_task" />
     </fragment>
 
     <fragment
-        android:id="@+id/CreateTaskFragment"
+        android:id="@+id/navigation_create_task"
         android:name="com.ldm.quicktask.fragments.CreateTaskFragment"
-        android:label="@string/create_task_fragment"
         tools:layout="@layout/fragment_create_task">
 
         <action
             android:id="@+id/action_CreateTaskFragment_to_ListTaskFragment"
-            app:destination="@id/ListTaskFragment" />
+            app:destination="@id/navigation_list_task" />
     </fragment>
 </navigation>
