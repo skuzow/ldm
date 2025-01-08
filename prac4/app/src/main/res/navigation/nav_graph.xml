@@ -21,7 +21,6 @@
     <fragment
         android:id="@+id/navigation_info_task"
         android:name="com.ldm.quicktask.fragments.InfoTaskFragment"
-        android:label="@string/info_task_fragment"
         tools:layout="@layout/fragment_info_task">
 
         <action
@@ -32,7 +31,6 @@
     <fragment
         android:id="@+id/navigation_create_task"
         android:name="com.ldm.quicktask.fragments.CreateTaskFragment"
-        android:label="@string/create_task_fragment"
         tools:layout="@layout/fragment_create_task">
 
         <action
