@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Ajustes</string>
+    <!-- Placeholders -->
+    <string name="task_title">Título de la Tarea</string>
+    <string name="task_description">Descripción de la Tarea</string>
+    <!-- Buttons -->
+    <string name="create_new_task">Crear Nueva Tarea</string>
+    <string name="save_task">Guardar Tarea</string>
+    <string name="back">Atrás</string>
+    <!-- Words -->
+    <string name="title">Título</string>
+    <string name="description">Descripción</string>
+    <string name="week_day">Día de la Semana</string>
+    <string name="date">Fecha</string>
+    <string name="time">Hora</string>
+</resources>
