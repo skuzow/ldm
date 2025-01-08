@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">QuickTask</string>
+    <string name="app_name" translatable="false">QuickTask</string>
     <string name="action_settings">Settings</string>
     <!-- Placeholders -->
     <string name="task_title">Task Title</string>
