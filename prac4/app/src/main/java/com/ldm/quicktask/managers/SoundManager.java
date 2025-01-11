@@ -1,4 +1,4 @@
-package com.ldm.quicktask.activities;
+package com.ldm.quicktask.managers;
 
 import android.content.Context;
 import android.media.AudioAttributes;
