@@ -42,8 +42,8 @@ public class EditTaskFragment extends Fragment {
 
         mainActivity = (MainActivity) getActivity();
 
-        dateDisplay = view.findViewById(R.id.taskAddDate);
-        timeDisplay = view.findViewById(R.id.taskAddTime);
+        dateDisplay = view.findViewById(R.id.taskEditDate);
+        timeDisplay = view.findViewById(R.id.taskEditTime);
 
         Bundle args = getArguments();
         if (args != null && args.containsKey("taskId")) {
@@ -64,6 +64,8 @@ public class EditTaskFragment extends Fragment {
             Toast.makeText(getContext(), "Error: Task ID not passed", Toast.LENGTH_SHORT).show();
             Log.e(TAG, "Task ID not passed in bundle.");
         }
+
+        this.binding.buttonBack.setOnClickListener(v -> navigateToTaskList());
 
         // Set up Save button
         binding.saveButton.setOnClickListener(v -> {
@@ -99,8 +101,8 @@ public class EditTaskFragment extends Fragment {
             }
         });
 
-        binding.taskAddEditDateButton.setOnClickListener(v -> DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date));
-        binding.taskAddEditTimeButton.setOnClickListener(v -> DateTimeDialog.editTime(getContext(), timeDisplay, time));
+        binding.taskEditEditDateButton.setOnClickListener(v -> DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date));
+        binding.taskEditEditTimeButton.setOnClickListener(v -> DateTimeDialog.editTime(getContext(), timeDisplay, time));
 
 
         return view;
@@ -118,6 +120,18 @@ public class EditTaskFragment extends Fragment {
 
         DateTimeDialog.syncDisplayDate(dateDisplay, date);
         DateTimeDialog.syncDisplayTime(timeDisplay, time);
+    }
+
+    private void navigateToTaskList() {
+        if (task != null) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("taskId", task.getId());
+            NavHostFragment.findNavController(EditTaskFragment.this)
+                    .navigate(R.id.action_EditTaskFragment_to_InfoTaskFragment, bundle);
+        } else {
+            Log.e(TAG, "Task is null, cannot navigate.");
+            Toast.makeText(getContext(), "Error: Task is null", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
