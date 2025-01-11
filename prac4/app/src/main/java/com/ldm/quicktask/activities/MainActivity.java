@@ -20,8 +20,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.ldm.quicktask.activities.SoundManager;
-
 import java.util.Date;
 import java.util.List;
 
@@ -62,6 +60,10 @@ public class MainActivity extends BaseActivity {
     }
 
     private void seedDatabase() {
+        List<TaskEntity> tasks = getAllTasks();
+
+        if (!tasks.isEmpty()) return;
+
         taskDao.insert(new TaskEntity(0, "test1", "test description 1", new Date()));
         taskDao.insert(new TaskEntity(1, "test2", "test description 2", new Date()));
     }
