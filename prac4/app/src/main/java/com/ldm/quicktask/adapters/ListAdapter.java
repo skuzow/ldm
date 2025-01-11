@@ -57,8 +57,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        CheckBox check;
-        TextView title, description, day, date;
+        private final CheckBox check;
+        private final TextView title, description, day, date;
 
         public ViewHolder(View itemView) {
             super(itemView);

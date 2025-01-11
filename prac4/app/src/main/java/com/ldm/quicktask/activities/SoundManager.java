@@ -8,8 +8,8 @@ import com.ldm.quicktask.R;
 
 public class SoundManager {
 
-    private SoundPool soundPool;
-    private int clickSoundId;
+    private final SoundPool soundPool;
+    private final int clickSoundId;
 
     public SoundManager(Context context) {
         AudioAttributes attributes = new AudioAttributes.Builder()

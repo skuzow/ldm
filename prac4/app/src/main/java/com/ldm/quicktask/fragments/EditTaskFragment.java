@@ -98,13 +98,8 @@ public class EditTaskFragment extends Fragment {
             }
         });
 
-        this.binding.taskAddEditDateButton.setOnClickListener(v -> {
-            DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date);
-        });
-
-        binding.taskAddEditTimeButton.setOnClickListener(v -> {
-            DateTimeDialog.editTime(getContext(), timeDisplay, time);
-        });
+        binding.taskAddEditDateButton.setOnClickListener(v -> DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date));
+        binding.taskAddEditTimeButton.setOnClickListener(v -> DateTimeDialog.editTime(getContext(), timeDisplay, time));
 
         return view;
     }

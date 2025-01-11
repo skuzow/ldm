@@ -40,13 +40,15 @@
             android:id="@+id/editButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/edit" />
+            android:text="@string/edit"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/delete"
-            android:layout_marginStart="16dp" />
+            android:layout_marginStart="16dp"
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 </LinearLayout>

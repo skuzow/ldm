@@ -72,17 +72,10 @@ public class CreateTaskFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        this.binding.taskAddEditDateButton.setOnClickListener(v -> {
-            DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date);
-        });
+        this.binding.taskAddEditDateButton.setOnClickListener(v -> DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date));
+        this.binding.taskAddEditTimeButton.setOnClickListener(v -> DateTimeDialog.editTime(this.getContext(), this.timeDisplay, this.time));
 
-        this.binding.taskAddEditTimeButton.setOnClickListener(v -> {
-            DateTimeDialog.editTime(this.getContext(), this.timeDisplay, this.time);
-        });
-
-        this.binding.buttonBack.setOnClickListener(v -> {
-            navigateToTaskList();
-        });
+        this.binding.buttonBack.setOnClickListener(v -> navigateToTaskList());
 
         editTextTitle = binding.editTextTitle;
         editTextDescription = binding.editTextDescription;

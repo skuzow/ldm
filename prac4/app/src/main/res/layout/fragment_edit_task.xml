@@ -13,13 +13,17 @@
             android:id="@+id/titleEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/task_title"/>
+            android:autofillHints=""
+            android:hint="@string/task_title"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/descriptionEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/task_description"/>
+            android:autofillHints=""
+            android:hint="@string/task_description"
+            android:inputType="text" />
 
         <!-- Display Date and Time -->
         <TextView
