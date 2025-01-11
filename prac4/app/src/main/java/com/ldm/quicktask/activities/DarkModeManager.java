@@ -1,4 +1,4 @@
-package com.ldm.quicktask.fragments;
+package com.ldm.quicktask.activities;
 
 import android.content.Context;
 import android.content.SharedPreferences;
