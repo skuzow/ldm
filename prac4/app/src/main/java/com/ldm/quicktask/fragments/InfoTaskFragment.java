@@ -55,6 +55,8 @@ public class InfoTaskFragment extends Fragment {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault());
         binding.dateTextView.setText(dateFormat.format(task.getDate()));
 
+        this.binding.buttonBack.setOnClickListener(v -> navigateToTaskList());
+
         binding.editButton.setOnClickListener(v -> {
             if (getView() != null) {
                 Bundle bundle = new Bundle();
@@ -79,5 +81,10 @@ public class InfoTaskFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null; // Clean up binding to avoid memory leaks
+    }
+
+    private void navigateToTaskList() {
+        NavHostFragment.findNavController(InfoTaskFragment.this)
+                .navigate(R.id.action_InfoTaskFragment_to_ListTaskFragment);
     }
 }
