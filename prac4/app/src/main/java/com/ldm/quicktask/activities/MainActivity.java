@@ -69,9 +69,8 @@ public class MainActivity extends BaseActivity {
     }
 
     public void updateTask(TaskEntity task) {
-        // Ensure the task is valid and that the update is handled safely
         if (task != null) {
-            // Code to update the task in the database
+            taskDao.update(task);
         } else {
             Log.e("MainActivity", "Attempted to update a null task");
         }

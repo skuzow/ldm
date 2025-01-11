@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,10 @@ import com.ldm.quicktask.R;
 import com.ldm.quicktask.activities.MainActivity;
 import com.ldm.quicktask.database.TaskEntity;
 import com.ldm.quicktask.databinding.FragmentEditTaskBinding;
+import com.ldm.quicktask.dialogs.DateTimeDialog;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class EditTaskFragment extends Fragment {
 
@@ -24,6 +29,11 @@ public class EditTaskFragment extends Fragment {
 
     private static final String TAG = "EditTaskFragment";
 
+    // Variables for date and time
+    private TextView dateDisplay, timeDisplay;
+    private int[] date = new int[3];
+    private int[] time = new int[2];
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -32,15 +42,20 @@ public class EditTaskFragment extends Fragment {
 
         mainActivity = (MainActivity) getActivity();
 
+        dateDisplay = view.findViewById(R.id.taskAddDate);
+        timeDisplay = view.findViewById(R.id.taskAddTime);
+
         Bundle args = getArguments();
         if (args != null && args.containsKey("taskId")) {
             int taskId = args.getInt("taskId");
             task = mainActivity.findTaskById(taskId);
 
             if (task != null) {
-                // Display task data in the input fields
                 binding.titleEditText.setText(task.getTitle());
                 binding.descriptionEditText.setText(task.getDescription());
+
+                syncDisplayDateTime(task.getDate());
+
             } else {
                 Toast.makeText(getContext(), "Error: Task not found", Toast.LENGTH_SHORT).show();
                 Log.e(TAG, "Task with ID " + taskId + " not found.");
@@ -65,10 +80,14 @@ public class EditTaskFragment extends Fragment {
                 task.setTitle(updatedTitle);
                 task.setDescription(updatedDescription);
 
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(date[2], date[1], date[0], time[0], time[1]);
+                task.setDate(calendar.getTime());
+
                 mainActivity.updateTask(task);
 
                 Bundle bundle = new Bundle();
-                bundle.putInt("taskId", task.getId());  // Pass the updated task ID
+                bundle.putInt("taskId", task.getId());
                 NavHostFragment.findNavController(EditTaskFragment.this)
                         .navigate(R.id.action_EditTaskFragment_to_InfoTaskFragment, bundle);
 
@@ -79,7 +98,25 @@ public class EditTaskFragment extends Fragment {
             }
         });
 
+        binding.taskAddEditTimeButton.setOnClickListener(v -> {
+            DateTimeDialog.editTime(getContext(), timeDisplay, time);
+        });
+
         return view;
+    }
+
+    private void syncDisplayDateTime(Date taskDate) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(taskDate);
+
+        date[0] = calendar.get(Calendar.DAY_OF_MONTH);
+        date[1] = calendar.get(Calendar.MONTH);
+        date[2] = calendar.get(Calendar.YEAR);
+        time[0] = calendar.get(Calendar.HOUR_OF_DAY);
+        time[1] = calendar.get(Calendar.MINUTE);
+
+        DateTimeDialog.syncDisplayDate(dateDisplay, date);
+        DateTimeDialog.syncDisplayTime(timeDisplay, time);
     }
 
     @Override
