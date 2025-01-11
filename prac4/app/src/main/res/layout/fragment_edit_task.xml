@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -13,20 +13,24 @@
             android:id="@+id/titleEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Task Title"/>
+            android:autofillHints=""
+            android:hint="@string/task_title"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/descriptionEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Task Description"/>
+            android:autofillHints=""
+            android:hint="@string/task_description"
+            android:inputType="text" />
 
         <!-- Display Date and Time -->
         <TextView
             android:id="@+id/taskAddDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date"
+            android:text="@string/date"
             android:textSize="16sp"
             android:paddingTop="10dp" />
 
@@ -34,7 +38,7 @@
             android:id="@+id/taskAddTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time"
+            android:text="@string/time"
             android:textSize="16sp"
             android:paddingTop="10dp" />
 
@@ -59,14 +63,13 @@
             android:layout_height="56dp"
             android:clickable="true"
             android:focusable="true"
-            android:contentDescription="Edit Time"
+            android:contentDescription="@string/time"
             android:src="@android:drawable/ic_menu_edit" />
 
         <Button
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save Changes"/>
-
+            android:text="@string/save_changes"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -66,7 +66,7 @@ public class InfoTaskFragment extends Fragment {
 
         binding.deleteButton.setOnClickListener(v -> {
             mainActivity.deleteTask(task);
-            Toast.makeText(getContext(), "Task deleted", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.task_deleted, Toast.LENGTH_SHORT).show();
             NavHostFragment.findNavController(InfoTaskFragment.this)
                     .navigate(R.id.action_InfoTaskFragment_to_ListTaskFragment);
             mainActivity.playClickSound();

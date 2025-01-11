@@ -4,7 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:foregroundTint="#C1ABAB">
+    tools:context=".fragments.ManualFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/manual_title"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/closeManualButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/manual_info_1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/closeManualButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTintMode="add"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/manual_info_2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/closeManualButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/closeManualButton"
@@ -18,62 +67,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.465"
         tools:ignore="TextContrastCheck" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="@string/welcome_to_quicktask_simplify_your_tasks"
-        android:textAlignment="center"
-        android:textColor="#0B0A0A"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/closeManualButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="@string/if_you_want_to_add_a_new_task_use_the_button_located_at_the_bottom"
-        android:textColor="#0B0A0A"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/closeManualButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="#BB9A9A"
-        android:backgroundTint="#BB9A9A"
-        android:backgroundTintMode="add"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="@string/you_can_check_more_information_about_your_created_tasks_edit_delete_them"
-        android:textColor="#151414"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/closeManualButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

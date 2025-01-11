@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="action_settings">Ajustes</string>
+    <!-- Menu -->
+    <string name="menu_dark_mode">Modo Oscuro</string>
+    <string name="menu_manual">Manual</string>
     <!-- Placeholders -->
     <string name="task_title">Título de la Tarea</string>
     <string name="task_description">Descripción de la Tarea</string>
@@ -8,10 +10,21 @@
     <string name="create_new_task">Crear Nueva Tarea</string>
     <string name="save_task">Guardar Tarea</string>
     <string name="back">Atrás</string>
+    <string name="close">Cerrar</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+    <string name="save_changes">Guardar Cambios</string>
     <!-- Words -->
     <string name="title">Título</string>
     <string name="description">Descripción</string>
     <string name="week_day">Día de la Semana</string>
     <string name="date">Fecha</string>
     <string name="time">Hora</string>
+    <string name="fill_fields">Por favor rellene todos los campos</string>
+    <string name="task_created">Tarea Creada</string>
+    <string name="task_updated">Tarea Actualizada</string>
+    <string name="task_deleted">Tarea Eliminada</string>
+    <string name="manual_title">Bienvenido a QuickTask - ¡simplifica tus tareas!</string>
+    <string name="manual_info_1">Si desea añadir una nueva tarea, utilice el botón \'+\' situado en la parte inferior.</string>
+    <string name="manual_info_2">Puede consultar más información sobre las tareas creadas, editarlas o eliminarlas.</string>
 </resources>

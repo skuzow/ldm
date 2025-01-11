@@ -13,21 +13,21 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:text="Title" />
+        android:text="@string/title" />
 
     <TextView
         android:id="@+id/descriptionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:text="Description" />
+        android:text="@string/description" />
 
     <TextView
         android:id="@+id/dateTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:text="Date" />
+        android:text="@string/date" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,14 +40,15 @@
             android:id="@+id/editButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit" />
+            android:text="@string/edit"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Delete"
-            android:layout_marginStart="16dp" />
-
+            android:text="@string/delete"
+            android:layout_marginStart="16dp"
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 </LinearLayout>

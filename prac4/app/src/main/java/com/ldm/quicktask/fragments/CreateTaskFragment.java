@@ -72,17 +72,10 @@ public class CreateTaskFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        this.binding.taskAddEditDateButton.setOnClickListener(v -> {
-            DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date);
-        });
+        this.binding.taskAddEditDateButton.setOnClickListener(v -> DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date));
+        this.binding.taskAddEditTimeButton.setOnClickListener(v -> DateTimeDialog.editTime(this.getContext(), this.timeDisplay, this.time));
 
-        this.binding.taskAddEditTimeButton.setOnClickListener(v -> {
-            DateTimeDialog.editTime(this.getContext(), this.timeDisplay, this.time);
-        });
-
-        this.binding.buttonBack.setOnClickListener(v -> {
-            navigateToTaskList();
-        });
+        this.binding.buttonBack.setOnClickListener(v -> navigateToTaskList());
 
         editTextTitle = binding.editTextTitle;
         editTextDescription = binding.editTextDescription;
@@ -102,12 +95,12 @@ public class CreateTaskFragment extends Fragment {
                 mainActivity.playClickSound();
                 mainActivity.createTask(taskEntity);
 
-                Toast.makeText(getContext(), "Task Created", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.task_created, Toast.LENGTH_SHORT).show();
 
                 navigateToTaskList();
             } else {
                 // Show error message if input fields are empty
-                Toast.makeText(getContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.fill_fields, Toast.LENGTH_SHORT).show();
             }
         });
     }
