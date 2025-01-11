@@ -15,6 +15,8 @@ import com.ldm.quicktask.database.AppDatabase;
 import com.ldm.quicktask.database.TaskDao;
 import com.ldm.quicktask.database.TaskEntity;
 import com.ldm.quicktask.databinding.ActivityMainBinding;
+import com.ldm.quicktask.managers.DarkModeManager;
+import com.ldm.quicktask.managers.SoundManager;
 
 import android.util.Log;
 import android.view.Menu;
