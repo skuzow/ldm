@@ -92,6 +92,7 @@ public class EditTaskFragment extends Fragment {
                         .navigate(R.id.action_EditTaskFragment_to_InfoTaskFragment, bundle);
 
                 Toast.makeText(getContext(), R.string.task_updated, Toast.LENGTH_SHORT).show();
+                mainActivity.playClickSound();
             } else {
                 Log.e(TAG, "Task is null, cannot update.");
                 Toast.makeText(getContext(), "Error: Task is null", Toast.LENGTH_SHORT).show();
@@ -100,6 +101,7 @@ public class EditTaskFragment extends Fragment {
 
         binding.taskAddEditDateButton.setOnClickListener(v -> DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date));
         binding.taskAddEditTimeButton.setOnClickListener(v -> DateTimeDialog.editTime(getContext(), timeDisplay, time));
+
 
         return view;
     }
