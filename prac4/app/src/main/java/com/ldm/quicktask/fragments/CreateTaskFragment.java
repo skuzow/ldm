@@ -94,6 +94,7 @@ public class CreateTaskFragment extends Fragment {
 
                 TaskEntity taskEntity = new TaskEntity(UUID.randomUUID().hashCode(), title, description, dateTask);
 
+                mainActivity.playClickSound();
                 mainActivity.createTask(taskEntity);
 
                 Toast.makeText(getContext(), "Task Created", Toast.LENGTH_SHORT).show();

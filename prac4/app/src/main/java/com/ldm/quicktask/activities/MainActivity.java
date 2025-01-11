@@ -20,6 +20,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ldm.quicktask.activities.SoundManager;
+
 import java.util.Date;
 import java.util.List;
 
@@ -29,6 +31,8 @@ public class MainActivity extends BaseActivity {
     private AppBarConfiguration appBarConfiguration;
     private TaskDao taskDao;
     private DarkModeManager darkModeManager;
+
+    private SoundManager soundManager; // Declare SoundManager
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,8 @@ public class MainActivity extends BaseActivity {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+        soundManager = new SoundManager(this); // Initialize the SoundManager
     }
 
     private void createDatabaseInstance() {
@@ -143,5 +149,19 @@ public class MainActivity extends BaseActivity {
     public boolean onSupportNavigateUp() {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (soundManager != null) {
+            soundManager.release(); // Release SoundManager when the activity is destroyed
+        }
+    }
+
+    public void playClickSound() {
+        if (soundManager != null) {
+            soundManager.playClickSound(); // Play sound
+        }
     }
 }
