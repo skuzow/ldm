@@ -1,7 +1,9 @@
 package com.ldm.quicktask.activities;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -13,6 +15,7 @@ import com.ldm.quicktask.database.AppDatabase;
 import com.ldm.quicktask.database.TaskDao;
 import com.ldm.quicktask.database.TaskEntity;
 import com.ldm.quicktask.databinding.ActivityMainBinding;
+import com.ldm.quicktask.fragments.DarkModeManager;
 
 import android.util.Log;
 import android.view.Menu;
@@ -26,10 +29,12 @@ public class MainActivity extends BaseActivity {
     private NavController navController;
     private AppBarConfiguration appBarConfiguration;
     private TaskDao taskDao;
+    private DarkModeManager darkModeManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setupStoredDarkMode();
 
         createDatabaseInstance();
 
@@ -82,24 +87,54 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_dark_mode) {
+            toggleDarkMode();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setupStoredDarkMode() {
+        darkModeManager = new DarkModeManager(this);
+
+        if (darkModeManager.isDarkModeStored()) {
+            boolean isDarkMode = darkModeManager.getDarkMode();
+
+            int mode = isDarkMode ?
+                    AppCompatDelegate.MODE_NIGHT_YES :
+                    AppCompatDelegate.MODE_NIGHT_NO;
+
+            AppCompatDelegate.setDefaultNightMode(mode);
+        }
+        else {
+            boolean isDarkMode = (getResources().getConfiguration().uiMode &
+                    Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+
+            darkModeManager.setDarkMode(isDarkMode);
+        }
+    }
+
+    private void toggleDarkMode() {
+        // Switch between light and dark themes
+        boolean isDarkMode = darkModeManager.getDarkMode();
+
+        int newMode = isDarkMode ?
+                AppCompatDelegate.MODE_NIGHT_NO :
+                AppCompatDelegate.MODE_NIGHT_YES;
+
+        AppCompatDelegate.setDefaultNightMode(newMode);
+
+        darkModeManager.setDarkMode(!isDarkMode);
     }
 
     @Override

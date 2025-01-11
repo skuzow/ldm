@@ -15,4 +15,6 @@
     <string name="week_day">Week Day</string>
     <string name="date">Date</string>
     <string name="time">Time</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="manual">Manual</string>
 </resources>
