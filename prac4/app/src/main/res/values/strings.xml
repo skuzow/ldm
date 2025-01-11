@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">QuickTask</string>
-    <string name="action_settings">Settings</string>
+    <!-- Menu -->
+    <string name="menu_dark_mode">Dark Mode</string>
+    <string name="menu_manual">Manual</string>
     <!-- Placeholders -->
     <string name="task_title">Task Title</string>
     <string name="task_description">Task Description</string>
@@ -9,17 +11,21 @@
     <string name="create_new_task">Create New Task</string>
     <string name="save_task">Save Task</string>
     <string name="back">Back</string>
+    <string name="close">Close</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="save_changes">Save Changes</string>
     <!-- Words -->
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="week_day">Week Day</string>
     <string name="date">Date</string>
     <string name="time">Time</string>
-    <string name="dark_mode">Dark Mode</string>
-    <string name="manual">Manual</string>
-    <string name="close">Close</string>
-    <string name="welcome_to_quicktask_simplify_your_tasks">Welcome to QuickTask – simplify your tasks!</string>
-    <string name="if_you_want_to_add_a_new_task_use_the_button_located_at_the_bottom">If you want to add a new task, use the \'+\' button located at the bottom.</string>
-    <string name="you_can_check_more_information_about_your_created_tasks_edit_or_delete_them">You can check more information about your created tasks, edit or delete them.</string>
-    <string name="you_can_check_more_information_about_your_created_tasks_edit_delete_them">You can check more information about your created tasks, edit or delete them.</string>
+    <string name="fill_fields">Please fill in all fields</string>
+    <string name="task_created">Task Created</string>
+    <string name="task_updated">Task Updated</string>
+    <string name="task_deleted">Task Deleted</string>
+    <string name="manual_title">Welcome to QuickTask – simplify your tasks!</string>
+    <string name="manual_info_1">If you want to add a new task, use the \'+\' button located at the bottom.</string>
+    <string name="manual_info_2">You can check more information about your created tasks, edit or delete them.</string>
 </resources>

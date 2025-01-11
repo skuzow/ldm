@@ -102,12 +102,12 @@ public class CreateTaskFragment extends Fragment {
                 mainActivity.playClickSound();
                 mainActivity.createTask(taskEntity);
 
-                Toast.makeText(getContext(), "Task Created", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.task_created, Toast.LENGTH_SHORT).show();
 
                 navigateToTaskList();
             } else {
                 // Show error message if input fields are empty
-                Toast.makeText(getContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.fill_fields, Toast.LENGTH_SHORT).show();
             }
         });
     }

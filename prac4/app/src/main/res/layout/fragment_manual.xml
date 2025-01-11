@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     android:foregroundTint="#C1ABAB">
 
-    <Button
-        android:id="@+id/closeManualButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/close"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465"
-        tools:ignore="TextContrastCheck" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -28,7 +15,7 @@
         android:backgroundTint="#FFFFFF"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="@string/welcome_to_quicktask_simplify_your_tasks"
+        android:text="@string/manual_title"
         android:textAlignment="center"
         android:textColor="#0B0A0A"
         android:textSize="24sp"
@@ -48,7 +35,7 @@
         android:backgroundTint="#FFFFFF"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:text="@string/if_you_want_to_add_a_new_task_use_the_button_located_at_the_bottom"
+        android:text="@string/manual_info_1"
         android:textColor="#0B0A0A"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/closeManualButton"
@@ -68,7 +55,7 @@
         android:backgroundTintMode="add"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:text="@string/you_can_check_more_information_about_your_created_tasks_edit_delete_them"
+        android:text="@string/manual_info_2"
         android:textColor="#151414"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/closeManualButton"
@@ -76,4 +63,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/closeManualButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/close"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465"
+        tools:ignore="TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

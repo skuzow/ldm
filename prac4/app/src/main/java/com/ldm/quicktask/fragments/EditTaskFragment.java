@@ -31,8 +31,8 @@ public class EditTaskFragment extends Fragment {
 
     // Variables for date and time
     private TextView dateDisplay, timeDisplay;
-    private int[] date = new int[3];
-    private int[] time = new int[2];
+    private final int[] date = new int[3];
+    private final int[] time = new int[2];
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -71,7 +71,7 @@ public class EditTaskFragment extends Fragment {
             String updatedDescription = binding.descriptionEditText.getText().toString();
 
             if (updatedTitle.isEmpty() || updatedDescription.isEmpty()) {
-                Toast.makeText(getContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.fill_fields, Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -91,7 +91,7 @@ public class EditTaskFragment extends Fragment {
                 NavHostFragment.findNavController(EditTaskFragment.this)
                         .navigate(R.id.action_EditTaskFragment_to_InfoTaskFragment, bundle);
 
-                Toast.makeText(getContext(), "Task updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.task_updated, Toast.LENGTH_SHORT).show();
             } else {
                 Log.e(TAG, "Task is null, cannot update.");
                 Toast.makeText(getContext(), "Error: Task is null", Toast.LENGTH_SHORT).show();
