@@ -41,14 +41,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle,TextContrastCheck" />
 
         <Button
             android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/delete"
             android:layout_marginStart="16dp"
-            tools:ignore="ButtonStyle" />
+            android:text="@string/delete"
+            tools:ignore="ButtonStyle,TextContrastCheck" />
     </LinearLayout>
 </LinearLayout>

@@ -65,6 +65,8 @@ public class EditTaskFragment extends Fragment {
             Log.e(TAG, "Task ID not passed in bundle.");
         }
 
+        this.binding.buttonBack.setOnClickListener(v -> navigateToTaskList());
+
         // Set up Save button
         binding.saveButton.setOnClickListener(v -> {
             String updatedTitle = binding.titleEditText.getText().toString();
@@ -118,6 +120,18 @@ public class EditTaskFragment extends Fragment {
 
         DateTimeDialog.syncDisplayDate(dateDisplay, date);
         DateTimeDialog.syncDisplayTime(timeDisplay, time);
+    }
+
+    private void navigateToTaskList() {
+        if (task != null) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("taskId", task.getId());
+            NavHostFragment.findNavController(EditTaskFragment.this)
+                    .navigate(R.id.action_EditTaskFragment_to_InfoTaskFragment, bundle);
+        } else {
+            Log.e(TAG, "Task is null, cannot navigate.");
+            Toast.makeText(getContext(), "Error: Task is null", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
