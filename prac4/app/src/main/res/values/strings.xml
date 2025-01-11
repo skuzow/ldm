@@ -28,4 +28,12 @@
     <string name="manual_title">Welcome to QuickTask – simplify your tasks!</string>
     <string name="manual_info_1">If you want to add a new task, use the \'+\' button located at the bottom.</string>
     <string name="manual_info_2">You can check more information about your created tasks, edit or delete them.</string>
+    <string name="task_title_edit">Task Title</string>
+    <string name="task_description_edit">Task Description</string>
+    <string name="date_edit">Date</string>
+    <string name="time_edit">Time</string>
+    <string name="edit_date_edit">Edit Date</string>
+    <string name="edit_time">Edit Time</string>
+    <string name="save_changes_edit">Save Changes</string>
+    <string name="back_edit">Back</string>
 </resources>
