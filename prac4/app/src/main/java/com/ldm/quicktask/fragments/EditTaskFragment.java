@@ -42,8 +42,8 @@ public class EditTaskFragment extends Fragment {
 
         mainActivity = (MainActivity) getActivity();
 
-        dateDisplay = view.findViewById(R.id.taskAddDate);
-        timeDisplay = view.findViewById(R.id.taskAddTime);
+        dateDisplay = view.findViewById(R.id.taskEditDate);
+        timeDisplay = view.findViewById(R.id.taskEditTime);
 
         Bundle args = getArguments();
         if (args != null && args.containsKey("taskId")) {
@@ -101,8 +101,8 @@ public class EditTaskFragment extends Fragment {
             }
         });
 
-        binding.taskAddEditDateButton.setOnClickListener(v -> DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date));
-        binding.taskAddEditTimeButton.setOnClickListener(v -> DateTimeDialog.editTime(getContext(), timeDisplay, time));
+        binding.taskEditEditDateButton.setOnClickListener(v -> DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date));
+        binding.taskEditEditTimeButton.setOnClickListener(v -> DateTimeDialog.editTime(getContext(), timeDisplay, time));
 
 
         return view;

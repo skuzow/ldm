@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.CreateTaskFragment">
+    tools:context=".fragments.EditTaskFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,40 +38,42 @@
             android:layout_marginTop="16dp"/>
 
         <TextView
-            android:id="@+id/taskAddDate"
+            android:id="@+id/taskEditDate"
             android:layout_width="150dp"
             android:layout_height="55dp"
             android:gravity="center"
             android:text="@string/date"
             android:textSize="24sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/descriptionEditText"
             app:layout_constraintHorizontal_bias="0.743"
-            app:layout_constraintVertical_bias="0.500"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.500" />
 
         <TextView
-            android:id="@+id/taskAddTime"
+            android:id="@+id/taskEditTime"
             android:layout_width="150dp"
             android:layout_height="55dp"
             android:gravity="center"
-            android:text="@string/edit"
+            android:text="@string/time"
             android:textSize="24sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/taskAddDate"
             app:layout_constraintHorizontal_bias="0.743"
-            app:layout_constraintVertical_bias="0.680"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.680" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/taskAddEditDateButton"
+            android:id="@+id/taskEditEditDateButton"
             android:layout_width="55dp"
             android:layout_height="56dp"
             android:clickable="true"
             android:focusable="true"
-            android:contentDescription="@string/edit_date_edit"
+            android:contentDescription="@string/date"
             android:src="@android:drawable/ic_menu_edit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +83,7 @@
             app:layout_constraintVertical_bias="0.500" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/taskAddEditTimeButton"
+            android:id="@+id/taskEditEditTimeButton"
             android:layout_width="55dp"
             android:layout_height="56dp"
             android:clickable="true"
@@ -99,10 +101,10 @@
             android:id="@+id/saveButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/save_changes_edit"
+            android:text="@string/save_changes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/taskAddEditTimeButton"
+            app:layout_constraintTop_toBottomOf="@id/taskEditEditTimeButton"
             android:layout_marginTop="16dp"
             android:padding="10dp"/>
 
@@ -116,6 +118,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/saveButton"
             android:layout_marginTop="16dp"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
