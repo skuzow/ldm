@@ -26,6 +26,20 @@
         <action
             android:id="@+id/action_InfoTaskFragment_to_ListTaskFragment"
             app:destination="@id/navigation_list_task" />
+
+        <action
+            android:id="@+id/action_InfoTaskFragment_to_EditTaskFragment"
+            app:destination="@id/navigation_edit_task" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_edit_task"
+        android:name="com.ldm.quicktask.fragments.EditTaskFragment"
+        tools:layout="@layout/fragment_edit_task">
+
+        <action
+            android:id="@+id/action_EditTaskFragment_to_InfoTaskFragment"
+            app:destination="@id/navigation_info_task" />
     </fragment>
 
     <fragment

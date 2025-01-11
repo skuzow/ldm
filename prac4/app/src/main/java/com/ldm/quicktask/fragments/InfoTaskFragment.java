@@ -1,15 +1,14 @@
 package com.ldm.quicktask.fragments;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.ldm.quicktask.R;
 import com.ldm.quicktask.activities.MainActivity;
@@ -24,7 +23,6 @@ public class InfoTaskFragment extends Fragment {
 
     private FragmentInfoTaskBinding binding;
     private MainActivity mainActivity;
-
     private TaskEntity task;
 
     @Override
@@ -35,10 +33,10 @@ public class InfoTaskFragment extends Fragment {
 
         mainActivity = Objects.requireNonNull((MainActivity) getActivity());
 
+        // Get the taskId from the arguments
         Bundle args = getArguments();
         if (args == null || !args.containsKey("taskId")) {
             Toast.makeText(getContext(), "Error: Task not found", Toast.LENGTH_SHORT).show();
-            mainActivity.onBackPressed(); // Navigate back
             return view;
         }
 
@@ -57,16 +55,20 @@ public class InfoTaskFragment extends Fragment {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault());
         binding.dateTextView.setText(dateFormat.format(task.getDate()));
 
-        // Set up Edit button
         binding.editButton.setOnClickListener(v -> {
-
+            if (getView() != null) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("taskId", task.getId());  // Pass the taskId
+                NavHostFragment.findNavController(InfoTaskFragment.this)
+                        .navigate(R.id.action_InfoTaskFragment_to_EditTaskFragment, bundle);
+            }
         });
 
-        // Set up Delete button
         binding.deleteButton.setOnClickListener(v -> {
-            //mainActivity.deleteTask(task.getId());
-            //Toast.makeText(getContext(), "Task deleted", Toast.LENGTH_SHORT).show();
-            //mainActivity.onBackPressed(); // Go back to the previous screen
+            mainActivity.deleteTask(task);
+            Toast.makeText(getContext(), "Task deleted", Toast.LENGTH_SHORT).show();
+            NavHostFragment.findNavController(InfoTaskFragment.this)
+                    .navigate(R.id.action_InfoTaskFragment_to_ListTaskFragment);
         });
 
         return view;

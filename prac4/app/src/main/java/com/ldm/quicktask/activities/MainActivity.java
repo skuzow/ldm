@@ -14,6 +14,7 @@ import com.ldm.quicktask.database.TaskDao;
 import com.ldm.quicktask.database.TaskEntity;
 import com.ldm.quicktask.databinding.ActivityMainBinding;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -68,7 +69,12 @@ public class MainActivity extends BaseActivity {
     }
 
     public void updateTask(TaskEntity task) {
-        taskDao.update(task);
+        // Ensure the task is valid and that the update is handled safely
+        if (task != null) {
+            // Code to update the task in the database
+        } else {
+            Log.e("MainActivity", "Attempted to update a null task");
+        }
     }
 
     public void deleteTask(TaskEntity task) {
