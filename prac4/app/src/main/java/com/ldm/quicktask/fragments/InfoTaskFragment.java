@@ -69,6 +69,7 @@ public class InfoTaskFragment extends Fragment {
             Toast.makeText(getContext(), "Task deleted", Toast.LENGTH_SHORT).show();
             NavHostFragment.findNavController(InfoTaskFragment.this)
                     .navigate(R.id.action_InfoTaskFragment_to_ListTaskFragment);
+            mainActivity.playClickSound();
         });
 
         return view;
