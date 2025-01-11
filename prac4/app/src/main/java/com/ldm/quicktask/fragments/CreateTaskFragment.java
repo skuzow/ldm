@@ -75,8 +75,13 @@ public class CreateTaskFragment extends Fragment {
         this.binding.taskAddEditDateButton.setOnClickListener(v -> {
             DateTimeDialog.editDate(this.getContext(), this.dateDisplay, this.date);
         });
+
         this.binding.taskAddEditTimeButton.setOnClickListener(v -> {
             DateTimeDialog.editTime(this.getContext(), this.timeDisplay, this.time);
+        });
+
+        this.binding.buttonBack.setOnClickListener(v -> {
+            navigateToTaskList();
         });
 
         editTextTitle = binding.editTextTitle;
@@ -99,13 +104,17 @@ public class CreateTaskFragment extends Fragment {
 
                 Toast.makeText(getContext(), "Task Created", Toast.LENGTH_SHORT).show();
 
-                NavHostFragment.findNavController(CreateTaskFragment.this)
-                        .navigate(R.id.action_CreateTaskFragment_to_ListTaskFragment);
+                navigateToTaskList();
             } else {
                 // Show error message if input fields are empty
                 Toast.makeText(getContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void navigateToTaskList() {
+        NavHostFragment.findNavController(CreateTaskFragment.this)
+                .navigate(R.id.action_CreateTaskFragment_to_ListTaskFragment);
     }
 
     @Override
