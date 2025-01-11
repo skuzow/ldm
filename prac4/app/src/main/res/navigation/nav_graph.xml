@@ -51,4 +51,14 @@
             android:id="@+id/action_CreateTaskFragment_to_ListTaskFragment"
             app:destination="@id/navigation_list_task" />
     </fragment>
+
+    <fragment
+        android:id="@+id/navigation_manual"
+        android:name="com.ldm.quicktask.fragments.ManualFragment"
+        tools:layout="@layout/fragment_manual">
+
+        <action
+            android:id="@+id/action_ManualFragment_to_ListTaskFragment"
+            app:destination="@id/navigation_list_task" />
+    </fragment>
 </navigation>

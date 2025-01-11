@@ -17,4 +17,9 @@
     <string name="time">Time</string>
     <string name="dark_mode">Dark Mode</string>
     <string name="manual">Manual</string>
+    <string name="close">Close</string>
+    <string name="welcome_to_quicktask_simplify_your_tasks">Welcome to QuickTask – simplify your tasks!</string>
+    <string name="if_you_want_to_add_a_new_task_use_the_button_located_at_the_bottom">If you want to add a new task, use the \'+\' button located at the bottom.</string>
+    <string name="you_can_check_more_information_about_your_created_tasks_edit_or_delete_them">You can check more information about your created tasks, edit or delete them.</string>
+    <string name="you_can_check_more_information_about_your_created_tasks_edit_delete_them">You can check more information about your created tasks, edit or delete them.</string>
 </resources>

@@ -98,6 +98,9 @@ public class MainActivity extends BaseActivity {
         if (id == R.id.action_dark_mode) {
             toggleDarkMode();
             return true;
+        } else if (id == R.id.action_manual){
+            navController.navigate(R.id.navigation_manual);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
